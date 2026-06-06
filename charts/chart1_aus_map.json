@@ -18,7 +18,7 @@
     "scale": 650
   },
   "data": {
-    "url": "../Data/aus_remoteness.topojson",
+    "url": "data/aus_remoteness.topojson",
     "format": {
       "type": "topojson",
       "feature": "data"
@@ -33,7 +33,7 @@
       "lookup": "ra_code_num",
       "from": {
         "data": {
-          "url": "../Data/hospitalization_by_remoteness.csv"
+          "url": "data/hospitalization_by_remoteness.csv"
         },
         "key": "aria_category",
         "fields": [
