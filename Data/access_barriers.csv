@@ -1,5 +1,0 @@
-barrier,barrier_label,major_cities_pct,remote_very_remote_pct,source
-no_nearby_gp,No nearby GP as barrier to care,3,20,AIHW Survey of Health Care
-no_nearby_specialist,No nearby specialist as barrier to care,6,58,AIHW Survey of Health Care
-ed_because_no_gp,Visited ED because no GP available,10,17,AIHW Survey of Health Care
-has_usual_gp,Has a usual GP,89,69,AIHW Survey of Health Care
