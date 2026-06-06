@@ -1,0 +1,102 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "background": null,
+  "config": {
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "view": {
+      "stroke": null
+    }
+  },
+  "data": {
+    "url": "data/gp_by_mm.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.year == 2025"
+    },
+    {
+      "fold": [
+        "vr_gps_fte",
+        "nonvr_gps_fte",
+        "trainee_gps_fte"
+      ],
+      "as": [
+        "gp_type",
+        "fte_value"
+      ]
+    },
+    {
+      "calculate": "datum.gp_type == 'vr_gps_fte' ? 'Vocationally Registered' : datum.gp_type == 'nonvr_gps_fte' ? 'Non-VR' : 'Trainees'",
+      "as": "gp_type_label"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "mm_category",
+      "type": "ordinal",
+      "axis": {
+        "title": "Remoteness Category",
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "titleFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFontSize": 11
+      }
+    },
+    "xOffset": {
+      "field": "gp_type_label"
+    },
+    "y": {
+      "field": "fte_value",
+      "type": "quantitative",
+      "axis": {
+        "title": "FTE",
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "titleFont": "Source Sans 3, system-ui, sans-serif",
+        "format": ",.0f",
+        "titleFontSize": 11
+      }
+    },
+    "color": {
+      "field": "gp_type_label",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Vocationally Registered",
+          "Non-VR",
+          "Trainees"
+        ],
+        "range": [
+          "#2E86AB",
+          "#E67E22",
+          "#C0392B"
+        ]
+      },
+      "legend": {
+        "title": "GP Type",
+        "titleFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFont": "Source Sans 3, system-ui, sans-serif"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "mm_label",
+        "title": "MM Category"
+      },
+      {
+        "field": "gp_type_label",
+        "title": "GP Type"
+      },
+      {
+        "field": "fte_value",
+        "title": "FTE",
+        "format": ",.0f"
+      }
+    ]
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusTopLeft": 2,
+    "cornerRadiusTopRight": 2
+  }
+}

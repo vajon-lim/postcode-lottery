@@ -1,0 +1,106 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 320,
+  "background": null,
+  "config": {
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "view": {
+      "stroke": null
+    }
+  },
+  "data": {
+    "url": "data/workforce_remoteness.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusTopRight": 2,
+    "cornerRadiusBottomRight": 2
+  },
+  "encoding": {
+    "y": {
+      "field": "profession",
+      "type": "ordinal",
+      "axis": {
+        "title": null,
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFontSize": 10
+      }
+    },
+    "yOffset": {
+      "field": "remoteness",
+      "type": "ordinal",
+      "sort": [
+        "Major Cities",
+        "Inner Regional",
+        "Outer Regional",
+        "Remote",
+        "Very Remote"
+      ]
+    },
+    "x": {
+      "field": "fte",
+      "type": "quantitative",
+      "axis": {
+        "title": "FTE",
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "titleFont": "Source Sans 3, system-ui, sans-serif",
+        "format": ",.0f",
+        "titleFontSize": 11
+      }
+    },
+    "color": {
+      "field": "remoteness",
+      "type": "nominal",
+      "sort": [
+        "Major Cities",
+        "Inner Regional",
+        "Outer Regional",
+        "Remote",
+        "Very Remote"
+      ],
+      "scale": {
+        "domain": [
+          "Major Cities",
+          "Inner Regional",
+          "Outer Regional",
+          "Remote",
+          "Very Remote"
+        ],
+        "range": [
+          "#2E86AB",
+          "#73C2D0",
+          "#FDB863",
+          "#E34A33",
+          "#B30000"
+        ]
+      },
+      "legend": {
+        "title": "Remoteness",
+        "titleFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "orient": "bottom"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "profession",
+        "title": "Profession"
+      },
+      {
+        "field": "remoteness",
+        "title": "Remoteness"
+      },
+      {
+        "field": "fte",
+        "title": "FTE",
+        "format": ",.0f"
+      },
+      {
+        "field": "headcount",
+        "title": "Headcount",
+        "format": ",.0f"
+      }
+    ]
+  }
+}

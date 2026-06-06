@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 400,
+  "background": null,
+  "config": {
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "view": {
+      "stroke": null
+    }
+  },
+  "projection": {
+    "type": "mercator"
+  },
+  "data": {"url": "data/vic_sa3.geojson", "format": {"type": "json", "property": "features"}},
+  "transform": [
+    {
+      "lookup": "properties.sa4_name_2021",
+      "from": {
+        "data": {"url": "data/vic_sa4_health.csv"},
+        "key": "sa4_name",
+        "fields": ["ed_rate_per_100k", "poor_health_pct", "area_type"]
+      }
+    }
+  ],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#ffffff",
+    "strokeWidth": 1.2
+  },
+  "encoding": {
+    "color": {
+      "field": "ed_rate_per_100k",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "orangered",
+        "domain": [15000, 45000]
+      },
+      "legend": {
+        "title": "ED visits per 100,000",
+        "orient": "bottom-right",
+        "titleFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "format": ",.0f",
+        "gradientLength": 120
+      }
+    },
+    "tooltip": [
+      {
+        "field": "properties.sa3_name_2021",
+        "title": "Area"
+      },
+      {
+        "field": "properties.sa4_name_2021",
+        "title": "Region"
+      },
+      {
+        "field": "ed_rate_per_100k",
+        "title": "ED visits / 100,000",
+        "format": ",.0f"
+      },
+      {
+        "field": "poor_health_pct",
+        "title": "Poor self-assessed health (%)",
+        "format": ".1f"
+      },
+      {
+        "field": "area_type",
+        "title": "Area type"
+      }
+    ]
+  }
+}

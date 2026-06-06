@@ -1,0 +1,348 @@
+/* =====================================================================
+   CUSTOM PROPERTIES
+   ===================================================================== */
+:root {
+  --font-heading: 'Libre Baskerville', Georgia, serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
+
+  --color-bg: #FAFAF8;
+  --color-bg-alt: #F0EFE9;
+  --color-hero-bg: #1A2634;
+  --color-hero-text: #FFFFFF;
+
+  --color-red: #C0392B;
+  --color-blue: #2E86AB;
+  --color-dark: #1A1A2E;
+  --color-text: #2C2C2C;
+  --color-text-light: #5A5A5A;
+  --color-border: #DEDBD4;
+  --color-stat-bg: rgba(255, 255, 255, 0.08);
+
+  --section-number-color: #C8C4BB;
+
+  --max-width: 1200px;
+  --section-padding: 4rem 1.5rem;
+  --chart-gap: 1.5rem;
+}
+
+/* =====================================================================
+   BASE RESET & BODY
+   ===================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =====================================================================
+   TYPOGRAPHY
+   ===================================================================== */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem; }
+h4 { font-size: 1rem; font-weight: 700; }
+
+p {
+  margin-top: 0;
+  max-width: 68ch;
+}
+
+a {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* =====================================================================
+   HERO
+   ===================================================================== */
+#hero {
+  background-color: var(--color-hero-bg);
+  color: var(--color-hero-text);
+  padding: 5rem 1.5rem 4rem;
+}
+
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero-kicker {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 1rem;
+  max-width: none;
+}
+
+.hero-title {
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 60ch;
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+
+/* Stat callout boxes */
+.stat-grid {
+  margin-top: 2rem;
+}
+
+.stat-box {
+  background: var(--color-stat-bg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 1.5rem 1.25rem;
+  margin: 0 0.5rem 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #E8A598;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  max-width: none;
+}
+
+/* =====================================================================
+   SECTION SHELL
+   ===================================================================== */
+.page-section {
+  padding: var(--section-padding);
+}
+
+.alt-bg {
+  background-color: var(--color-bg-alt);
+}
+
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-number {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--section-number-color);
+  line-height: 1;
+  margin: 0 0 -0.5rem 0;
+  max-width: none;
+  user-select: none;
+}
+
+.section-title {
+  margin-bottom: 0.75rem;
+  color: var(--color-dark);
+}
+
+.section-intro {
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+  max-width: 72ch;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* =====================================================================
+   CHART CONTAINERS
+   ===================================================================== */
+.chart-row {
+  margin: 0 -0.75rem;
+}
+
+.chart-row > [class*="pure-u"] {
+  padding: 0 0.75rem;
+  margin-bottom: var(--chart-gap);
+}
+
+.chart-container {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.25rem 1.25rem 1rem;
+  height: 100%;
+}
+
+.alt-bg .chart-container {
+  background: #FFFFFF;
+}
+
+.chart-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 0.15rem;
+}
+
+.chart-subtitle {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+  max-width: none;
+  line-height: 1.4;
+}
+
+/* Ensure Vega-Lite SVGs fill their containers */
+.chart-container .vega-embed {
+  width: 100%;
+}
+
+.chart-container .vega-embed canvas,
+.chart-container .vega-embed svg {
+  max-width: 100%;
+}
+
+/* =====================================================================
+   WAFFLE CHART SECTION
+   ===================================================================== */
+.waffle-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.waffle-labels {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+
+.waffle-label-left {
+  text-align: center;
+  padding-right: 1rem;
+}
+
+.waffle-label-right {
+  text-align: center;
+  padding-left: 1rem;
+}
+
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
+#footer {
+  background-color: var(--color-dark);
+  color: rgba(255, 255, 255, 0.75);
+  padding: 3rem 1.5rem;
+  font-size: 0.85rem;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+#footer h4 {
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+}
+
+#footer p {
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.source-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.source-list li {
+  padding: 0.3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  line-height: 1.5;
+}
+
+.source-list li:first-child {
+  border-top: none;
+}
+
+.source-list a {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8rem;
+}
+
+.source-list a:hover {
+  color: #FFFFFF;
+}
+
+/* =====================================================================
+   PURE.CSS GRID OVERRIDES
+   ===================================================================== */
+
+/* Ensure pure-g rows don't collapse */
+.pure-g {
+  letter-spacing: 0;
+}
+
+/* =====================================================================
+   RESPONSIVE ADJUSTMENTS
+   ===================================================================== */
+@media (max-width: 768px) {
+  #hero {
+    padding: 3rem 1.25rem 2.5rem;
+  }
+
+  .stat-box {
+    margin-right: 0;
+  }
+
+  .section-number {
+    font-size: 2.8rem;
+  }
+
+  .page-section {
+    padding: 2.5rem 1.25rem;
+  }
+}

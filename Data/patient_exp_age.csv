@@ -1,0 +1,24 @@
+age_group,service,needed_pct
+15–24,GP,72.6
+25–34,GP,78.3
+35–44,GP,82.7
+45–54,GP,84.9
+55–64,GP,89.1
+65–74,GP,94.4
+75–84,GP,97.4
+85+,GP,97.8
+15–24,Dental,60.9
+25–34,Dental,58.1
+35–44,Dental,61.6
+45–54,Dental,65.4
+55–64,Dental,67.5
+65–74,Dental,66.3
+75–84,Dental,60.9
+85+,Dental,53.0
+15–24,Mental Health,21.5
+25–34,Mental Health,22.1
+35–44,Mental Health,19.9
+45–54,Mental Health,18.9
+55–64,Mental Health,17.0
+65–74,Mental Health,10.2
+75+,Mental Health,6.3

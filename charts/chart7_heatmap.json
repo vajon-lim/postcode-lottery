@@ -1,0 +1,72 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 200,
+  "background": null,
+  "config": {
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "view": {
+      "stroke": null
+    }
+  },
+  "data": {
+    "url": "data/patient_exp_heatmap.csv"
+  },
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "axis": {
+        "title": null,
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFontSize": 11,
+        "labelAngle": -30
+      }
+    },
+    "y": {
+      "field": "service",
+      "type": "ordinal",
+      "sort": [
+        "GP",
+        "Dental",
+        "Hospital",
+        "ED",
+        "After-Hours GP"
+      ],
+      "axis": {
+        "title": null,
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFontSize": 11
+      }
+    },
+    "color": {
+      "field": "needed_pct",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "blues"
+      },
+      "legend": {
+        "title": "% who saw\nservice",
+        "titleFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "gradientLength": 100
+      }
+    },
+    "tooltip": [
+      {
+        "field": "service",
+        "title": "Service"
+      },
+      {
+        "field": "year",
+        "title": "Year"
+      },
+      {
+        "field": "needed_pct",
+        "title": "% saw service",
+        "format": ".1f"
+      }
+    ]
+  }
+}

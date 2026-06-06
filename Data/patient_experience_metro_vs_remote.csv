@@ -1,0 +1,13 @@
+metric,metric_label,major_cities_pct,outer_regional_remote_pct,source
+gp_wait_unacceptable,GP wait time longer than acceptable,24.6,33.6,ABS Patient Experiences 2024-25
+saw_gp,Saw a GP in last 12 months,83.5,79.8,ABS Patient Experiences 2024-25
+delayed_missed_gp,Delayed or did not see GP when needed,25.9,30.4,ABS Patient Experiences 2024-25
+after_hours_gp,Saw after-hours GP in last 12 months,5.7,3.9,ABS Patient Experiences 2024-25
+urgent_care_4h,Seen within 4 hours for urgent care,45.7,29.8,ABS Patient Experiences 2024-25
+dental_access,Saw dental professional in last 12 months,55.9,45.5,ABS Patient Experiences 2024-25
+dental_cost_barrier,Delayed/missed dental due to cost,14.9,19.6,ABS Patient Experiences 2024-25
+dental_waiting_list,Placed on public dental waiting list,3.2,7.1,ABS Patient Experiences 2024-25
+ed_visit,Visited emergency department,14.1,20.5,ABS Patient Experiences 2024-25
+hospital_admission,Admitted to hospital,11.8,14.7,ABS Patient Experiences 2024-25
+specialist_wait_unacceptable,Specialist wait time longer than acceptable,25.7,32.3,ABS Patient Experiences 2024-25
+mental_health_cost_barrier,Delayed/missed mental health care due to cost,20.6,13.0,ABS Patient Experiences 2024-25

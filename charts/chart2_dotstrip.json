@@ -1,0 +1,95 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 280,
+  "background": null,
+  "config": {
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "view": {
+      "stroke": null
+    }
+  },
+  "data": {
+    "url": "data/workforce_remoteness.csv"
+  },
+  "mark": {
+    "type": "point",
+    "filled": true,
+    "size": 80,
+    "opacity": 0.75
+  },
+  "encoding": {
+    "y": {
+      "field": "remoteness",
+      "type": "ordinal",
+      "sort": [
+        "Major Cities",
+        "Inner Regional",
+        "Outer Regional",
+        "Remote",
+        "Very Remote"
+      ],
+      "axis": {
+        "title": null,
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFontSize": 11
+      }
+    },
+    "x": {
+      "field": "fte",
+      "type": "quantitative",
+      "axis": {
+        "title": "Full-time equivalent (FTE)",
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "titleFont": "Source Sans 3, system-ui, sans-serif",
+        "titleFontSize": 11
+      }
+    },
+    "color": {
+      "field": "profession",
+      "type": "nominal",
+      "scale": {
+        "range": [
+          "#2E86AB",
+          "#C0392B",
+          "#27AE60",
+          "#E67E22",
+          "#8E44AD",
+          "#16A085",
+          "#D35400",
+          "#2C3E50"
+        ]
+      },
+      "legend": {
+        "title": "Profession",
+        "titleFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "orient": "right"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "profession",
+        "title": "Profession"
+      },
+      {
+        "field": "remoteness",
+        "title": "Remoteness"
+      },
+      {
+        "field": "fte",
+        "title": "FTE",
+        "format": ",.0f"
+      },
+      {
+        "field": "headcount",
+        "title": "Headcount",
+        "format": ",.0f"
+      },
+      {
+        "field": "avg_age",
+        "title": "Avg age"
+      }
+    ]
+  }
+}

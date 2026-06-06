@@ -1,0 +1,155 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 280,
+  "background": null,
+  "config": {
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "view": {
+      "stroke": null
+    }
+  },
+  "data": {
+    "url": "data/gp_by_mm.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.year == 2025"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 2,
+        "color": "#ccc"
+      },
+      "encoding": {
+        "y": {
+          "field": "mm_label",
+          "type": "ordinal",
+          "sort": [
+            "Major cities",
+            "Large regional cities",
+            "Medium rural towns",
+            "Small rural towns",
+            "Very small rural towns",
+            "Remote communities",
+            "Very remote communities"
+          ],
+          "axis": {
+            "title": null,
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "labelFontSize": 11
+          }
+        },
+        "x": {
+          "value": 0
+        },
+        "x2": {
+          "field": "gp_fte",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 120
+      },
+      "encoding": {
+        "y": {
+          "field": "mm_label",
+          "type": "ordinal",
+          "sort": [
+            "Major cities",
+            "Large regional cities",
+            "Medium rural towns",
+            "Small rural towns",
+            "Very small rural towns",
+            "Remote communities",
+            "Very remote communities"
+          ]
+        },
+        "x": {
+          "field": "gp_fte",
+          "type": "quantitative",
+          "axis": {
+            "title": "GP FTE (2025)",
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "titleFont": "Source Sans 3, system-ui, sans-serif",
+            "format": ",.0f",
+            "titleFontSize": 11
+          }
+        },
+        "color": {
+          "field": "gp_fte",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "redyellowgreen",
+            "reverse": true,
+            "domain": [
+              0,
+              22000
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "mm_label",
+            "title": "MM Category"
+          },
+          {
+            "field": "gp_fte",
+            "title": "GP FTE",
+            "format": ",.0f"
+          },
+          {
+            "field": "total_gps",
+            "title": "Total GPs",
+            "format": ",.0f"
+          },
+          {
+            "field": "vr_gps_fte",
+            "title": "Vocational Reg. FTE",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "fontSize": 10
+      },
+      "encoding": {
+        "y": {
+          "field": "mm_label",
+          "type": "ordinal",
+          "sort": [
+            "Major cities",
+            "Large regional cities",
+            "Medium rural towns",
+            "Small rural towns",
+            "Very small rural towns",
+            "Remote communities",
+            "Very remote communities"
+          ]
+        },
+        "x": {
+          "field": "gp_fte",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "gp_fte",
+          "type": "quantitative",
+          "format": ",.0f"
+        }
+      }
+    }
+  ]
+}

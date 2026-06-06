@@ -1,0 +1,1490 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 260,
+  "background": null,
+  "config": {
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "view": {
+      "stroke": null
+    }
+  },
+  "data": {
+    "values": [
+      {
+        "group": "Major Cities",
+        "i": 0,
+        "row": 0,
+        "col": 0,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 1,
+        "row": 0,
+        "col": 1,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 2,
+        "row": 0,
+        "col": 2,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 3,
+        "row": 0,
+        "col": 3,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 4,
+        "row": 0,
+        "col": 4,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 5,
+        "row": 0,
+        "col": 5,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 6,
+        "row": 0,
+        "col": 6,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 7,
+        "row": 0,
+        "col": 7,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 8,
+        "row": 0,
+        "col": 8,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 9,
+        "row": 0,
+        "col": 9,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 10,
+        "row": 1,
+        "col": 0,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 11,
+        "row": 1,
+        "col": 1,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 12,
+        "row": 1,
+        "col": 2,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 13,
+        "row": 1,
+        "col": 3,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 14,
+        "row": 1,
+        "col": 4,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 15,
+        "row": 1,
+        "col": 5,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 16,
+        "row": 1,
+        "col": 6,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 17,
+        "row": 1,
+        "col": 7,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 18,
+        "row": 1,
+        "col": 8,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 19,
+        "row": 1,
+        "col": 9,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 20,
+        "row": 2,
+        "col": 0,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 21,
+        "row": 2,
+        "col": 1,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 22,
+        "row": 2,
+        "col": 2,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 23,
+        "row": 2,
+        "col": 3,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 24,
+        "row": 2,
+        "col": 4,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 25,
+        "row": 2,
+        "col": 5,
+        "highlight": true
+      },
+      {
+        "group": "Major Cities",
+        "i": 26,
+        "row": 2,
+        "col": 6,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 27,
+        "row": 2,
+        "col": 7,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 28,
+        "row": 2,
+        "col": 8,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 29,
+        "row": 2,
+        "col": 9,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 30,
+        "row": 3,
+        "col": 0,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 31,
+        "row": 3,
+        "col": 1,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 32,
+        "row": 3,
+        "col": 2,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 33,
+        "row": 3,
+        "col": 3,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 34,
+        "row": 3,
+        "col": 4,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 35,
+        "row": 3,
+        "col": 5,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 36,
+        "row": 3,
+        "col": 6,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 37,
+        "row": 3,
+        "col": 7,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 38,
+        "row": 3,
+        "col": 8,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 39,
+        "row": 3,
+        "col": 9,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 40,
+        "row": 4,
+        "col": 0,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 41,
+        "row": 4,
+        "col": 1,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 42,
+        "row": 4,
+        "col": 2,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 43,
+        "row": 4,
+        "col": 3,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 44,
+        "row": 4,
+        "col": 4,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 45,
+        "row": 4,
+        "col": 5,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 46,
+        "row": 4,
+        "col": 6,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 47,
+        "row": 4,
+        "col": 7,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 48,
+        "row": 4,
+        "col": 8,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 49,
+        "row": 4,
+        "col": 9,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 50,
+        "row": 5,
+        "col": 0,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 51,
+        "row": 5,
+        "col": 1,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 52,
+        "row": 5,
+        "col": 2,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 53,
+        "row": 5,
+        "col": 3,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 54,
+        "row": 5,
+        "col": 4,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 55,
+        "row": 5,
+        "col": 5,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 56,
+        "row": 5,
+        "col": 6,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 57,
+        "row": 5,
+        "col": 7,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 58,
+        "row": 5,
+        "col": 8,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 59,
+        "row": 5,
+        "col": 9,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 60,
+        "row": 6,
+        "col": 0,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 61,
+        "row": 6,
+        "col": 1,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 62,
+        "row": 6,
+        "col": 2,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 63,
+        "row": 6,
+        "col": 3,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 64,
+        "row": 6,
+        "col": 4,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 65,
+        "row": 6,
+        "col": 5,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 66,
+        "row": 6,
+        "col": 6,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 67,
+        "row": 6,
+        "col": 7,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 68,
+        "row": 6,
+        "col": 8,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 69,
+        "row": 6,
+        "col": 9,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 70,
+        "row": 7,
+        "col": 0,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 71,
+        "row": 7,
+        "col": 1,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 72,
+        "row": 7,
+        "col": 2,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 73,
+        "row": 7,
+        "col": 3,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 74,
+        "row": 7,
+        "col": 4,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 75,
+        "row": 7,
+        "col": 5,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 76,
+        "row": 7,
+        "col": 6,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 77,
+        "row": 7,
+        "col": 7,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 78,
+        "row": 7,
+        "col": 8,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 79,
+        "row": 7,
+        "col": 9,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 80,
+        "row": 8,
+        "col": 0,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 81,
+        "row": 8,
+        "col": 1,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 82,
+        "row": 8,
+        "col": 2,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 83,
+        "row": 8,
+        "col": 3,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 84,
+        "row": 8,
+        "col": 4,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 85,
+        "row": 8,
+        "col": 5,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 86,
+        "row": 8,
+        "col": 6,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 87,
+        "row": 8,
+        "col": 7,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 88,
+        "row": 8,
+        "col": 8,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 89,
+        "row": 8,
+        "col": 9,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 90,
+        "row": 9,
+        "col": 0,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 91,
+        "row": 9,
+        "col": 1,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 92,
+        "row": 9,
+        "col": 2,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 93,
+        "row": 9,
+        "col": 3,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 94,
+        "row": 9,
+        "col": 4,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 95,
+        "row": 9,
+        "col": 5,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 96,
+        "row": 9,
+        "col": 6,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 97,
+        "row": 9,
+        "col": 7,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 98,
+        "row": 9,
+        "col": 8,
+        "highlight": false
+      },
+      {
+        "group": "Major Cities",
+        "i": 99,
+        "row": 9,
+        "col": 9,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 0,
+        "row": 0,
+        "col": 0,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 1,
+        "row": 0,
+        "col": 1,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 2,
+        "row": 0,
+        "col": 2,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 3,
+        "row": 0,
+        "col": 3,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 4,
+        "row": 0,
+        "col": 4,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 5,
+        "row": 0,
+        "col": 5,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 6,
+        "row": 0,
+        "col": 6,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 7,
+        "row": 0,
+        "col": 7,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 8,
+        "row": 0,
+        "col": 8,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 9,
+        "row": 0,
+        "col": 9,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 10,
+        "row": 1,
+        "col": 0,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 11,
+        "row": 1,
+        "col": 1,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 12,
+        "row": 1,
+        "col": 2,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 13,
+        "row": 1,
+        "col": 3,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 14,
+        "row": 1,
+        "col": 4,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 15,
+        "row": 1,
+        "col": 5,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 16,
+        "row": 1,
+        "col": 6,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 17,
+        "row": 1,
+        "col": 7,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 18,
+        "row": 1,
+        "col": 8,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 19,
+        "row": 1,
+        "col": 9,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 20,
+        "row": 2,
+        "col": 0,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 21,
+        "row": 2,
+        "col": 1,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 22,
+        "row": 2,
+        "col": 2,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 23,
+        "row": 2,
+        "col": 3,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 24,
+        "row": 2,
+        "col": 4,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 25,
+        "row": 2,
+        "col": 5,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 26,
+        "row": 2,
+        "col": 6,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 27,
+        "row": 2,
+        "col": 7,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 28,
+        "row": 2,
+        "col": 8,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 29,
+        "row": 2,
+        "col": 9,
+        "highlight": true
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 30,
+        "row": 3,
+        "col": 0,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 31,
+        "row": 3,
+        "col": 1,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 32,
+        "row": 3,
+        "col": 2,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 33,
+        "row": 3,
+        "col": 3,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 34,
+        "row": 3,
+        "col": 4,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 35,
+        "row": 3,
+        "col": 5,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 36,
+        "row": 3,
+        "col": 6,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 37,
+        "row": 3,
+        "col": 7,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 38,
+        "row": 3,
+        "col": 8,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 39,
+        "row": 3,
+        "col": 9,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 40,
+        "row": 4,
+        "col": 0,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 41,
+        "row": 4,
+        "col": 1,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 42,
+        "row": 4,
+        "col": 2,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 43,
+        "row": 4,
+        "col": 3,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 44,
+        "row": 4,
+        "col": 4,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 45,
+        "row": 4,
+        "col": 5,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 46,
+        "row": 4,
+        "col": 6,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 47,
+        "row": 4,
+        "col": 7,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 48,
+        "row": 4,
+        "col": 8,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 49,
+        "row": 4,
+        "col": 9,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 50,
+        "row": 5,
+        "col": 0,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 51,
+        "row": 5,
+        "col": 1,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 52,
+        "row": 5,
+        "col": 2,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 53,
+        "row": 5,
+        "col": 3,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 54,
+        "row": 5,
+        "col": 4,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 55,
+        "row": 5,
+        "col": 5,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 56,
+        "row": 5,
+        "col": 6,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 57,
+        "row": 5,
+        "col": 7,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 58,
+        "row": 5,
+        "col": 8,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 59,
+        "row": 5,
+        "col": 9,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 60,
+        "row": 6,
+        "col": 0,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 61,
+        "row": 6,
+        "col": 1,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 62,
+        "row": 6,
+        "col": 2,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 63,
+        "row": 6,
+        "col": 3,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 64,
+        "row": 6,
+        "col": 4,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 65,
+        "row": 6,
+        "col": 5,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 66,
+        "row": 6,
+        "col": 6,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 67,
+        "row": 6,
+        "col": 7,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 68,
+        "row": 6,
+        "col": 8,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 69,
+        "row": 6,
+        "col": 9,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 70,
+        "row": 7,
+        "col": 0,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 71,
+        "row": 7,
+        "col": 1,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 72,
+        "row": 7,
+        "col": 2,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 73,
+        "row": 7,
+        "col": 3,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 74,
+        "row": 7,
+        "col": 4,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 75,
+        "row": 7,
+        "col": 5,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 76,
+        "row": 7,
+        "col": 6,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 77,
+        "row": 7,
+        "col": 7,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 78,
+        "row": 7,
+        "col": 8,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 79,
+        "row": 7,
+        "col": 9,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 80,
+        "row": 8,
+        "col": 0,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 81,
+        "row": 8,
+        "col": 1,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 82,
+        "row": 8,
+        "col": 2,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 83,
+        "row": 8,
+        "col": 3,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 84,
+        "row": 8,
+        "col": 4,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 85,
+        "row": 8,
+        "col": 5,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 86,
+        "row": 8,
+        "col": 6,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 87,
+        "row": 8,
+        "col": 7,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 88,
+        "row": 8,
+        "col": 8,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 89,
+        "row": 8,
+        "col": 9,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 90,
+        "row": 9,
+        "col": 0,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 91,
+        "row": 9,
+        "col": 1,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 92,
+        "row": 9,
+        "col": 2,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 93,
+        "row": 9,
+        "col": 3,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 94,
+        "row": 9,
+        "col": 4,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 95,
+        "row": 9,
+        "col": 5,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 96,
+        "row": 9,
+        "col": 6,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 97,
+        "row": 9,
+        "col": 7,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 98,
+        "row": 9,
+        "col": 8,
+        "highlight": false
+      },
+      {
+        "group": "Outer Regional / Remote",
+        "i": 99,
+        "row": 9,
+        "col": 9,
+        "highlight": false
+      }
+    ]
+  },
+  "facet": {
+    "column": {
+      "field": "group",
+      "type": "nominal",
+      "header": {
+        "title": null,
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFontSize": 13,
+        "labelFontWeight": "bold"
+      }
+    }
+  },
+  "spec": {
+    "width": 180,
+    "height": 180,
+    "mark": {
+      "type": "rect",
+      "stroke": "#ffffff",
+      "strokeWidth": 1.5,
+      "cornerRadius": 2
+    },
+    "encoding": {
+      "x": {
+        "field": "col",
+        "type": "ordinal",
+        "axis": null,
+        "scale": {
+          "paddingInner": 0.15
+        }
+      },
+      "y": {
+        "field": "row",
+        "type": "ordinal",
+        "axis": null,
+        "scale": {
+          "paddingInner": 0.15
+        }
+      },
+      "color": {
+        "field": "highlight",
+        "type": "nominal",
+        "scale": {
+          "domain": [
+            true,
+            false
+          ],
+          "range": [
+            "#C0392B",
+            "#E8E4DF"
+          ]
+        },
+        "legend": {
+          "title": null,
+          "titleFont": "Source Sans 3, system-ui, sans-serif",
+          "labelFont": "Source Sans 3, system-ui, sans-serif",
+          "values": [
+            true,
+            false
+          ],
+          "labelExpr": "datum.value ? 'Delayed / missed GP' : 'Saw GP'"
+        }
+      },
+      "tooltip": [
+        {
+          "field": "group",
+          "title": "Region"
+        },
+        {
+          "field": "highlight",
+          "title": "Delayed/missed GP?"
+        }
+      ]
+    }
+  }
+}

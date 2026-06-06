@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 260,
+  "background": null,
+  "config": {
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "view": {
+      "stroke": null
+    }
+  },
+  "data": {
+    "url": "data/patient_exp_heatmap.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.service == 'GP' || datum.service == 'After-Hours GP'"
+    }
+  ],
+  "mark": {
+    "type": "area",
+    "opacity": 0.8,
+    "line": true
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "axis": {
+        "title": null,
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFontSize": 10,
+        "labelAngle": -30
+      }
+    },
+    "y": {
+      "field": "needed_pct",
+      "type": "quantitative",
+      "stack": "zero",
+      "axis": {
+        "title": "% who saw service",
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "titleFont": "Source Sans 3, system-ui, sans-serif",
+        "titleFontSize": 11
+      }
+    },
+    "color": {
+      "field": "service",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "GP",
+          "After-Hours GP"
+        ],
+        "range": [
+          "#2E86AB",
+          "#E67E22"
+        ]
+      },
+      "legend": {
+        "title": "Service",
+        "titleFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFont": "Source Sans 3, system-ui, sans-serif"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "year",
+        "title": "Year"
+      },
+      {
+        "field": "service",
+        "title": "Service"
+      },
+      {
+        "field": "needed_pct",
+        "title": "% who saw service",
+        "format": ".1f"
+      }
+    ]
+  }
+}

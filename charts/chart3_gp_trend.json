@@ -1,0 +1,142 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 280,
+  "background": null,
+  "config": {
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "view": {
+      "stroke": null
+    }
+  },
+  "data": {
+    "url": "data/gp_by_mm.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": {
+          "filled": true,
+          "size": 50
+        },
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {
+            "title": null,
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "labelFontSize": 11
+          }
+        },
+        "y": {
+          "field": "total_gps",
+          "type": "quantitative",
+          "axis": {
+            "title": "Total GPs",
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "titleFont": "Source Sans 3, system-ui, sans-serif",
+            "format": ",.0f",
+            "titleFontSize": 11
+          }
+        },
+        "color": {
+          "field": "mm_label",
+          "type": "nominal",
+          "scale": {
+            "range": [
+              "#1a9641",
+              "#a6d96a",
+              "#fdae61",
+              "#f46d43",
+              "#d73027",
+              "#8B0000",
+              "#4d0000"
+            ]
+          },
+          "sort": [
+            "Major cities",
+            "Large regional cities",
+            "Medium rural towns",
+            "Small rural towns",
+            "Very small rural towns",
+            "Remote communities",
+            "Very remote communities"
+          ],
+          "legend": {
+            "title": "Category",
+            "titleFont": "Source Sans 3, system-ui, sans-serif",
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "orient": "right",
+            "labelLimit": 180
+          }
+        },
+        "tooltip": [
+          {
+            "field": "mm_label",
+            "title": "MM Category"
+          },
+          {
+            "field": "year",
+            "title": "Year"
+          },
+          {
+            "field": "total_gps",
+            "title": "Total GPs",
+            "format": ",.0f"
+          },
+          {
+            "field": "gp_fte",
+            "title": "GP FTE",
+            "format": ",.1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "fontSize": 10
+      },
+      "transform": [
+        {
+          "filter": "datum.year == 2025"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "total_gps",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "mm_category",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "mm_label",
+          "type": "nominal",
+          "scale": {
+            "range": [
+              "#1a9641",
+              "#a6d96a",
+              "#fdae61",
+              "#f46d43",
+              "#d73027",
+              "#8B0000",
+              "#4d0000"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

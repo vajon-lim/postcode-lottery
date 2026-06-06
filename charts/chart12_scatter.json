@@ -1,0 +1,104 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "background": null,
+  "config": {
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "view": {
+      "stroke": null
+    }
+  },
+  "data": {
+    "url": "data/phidu_vic.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.ed_rate_per_100k != null && datum.population != null"
+    },
+    {
+      "filter": "datum.population > 5000"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "opacity": 0.55,
+        "size": 60
+      },
+      "encoding": {
+        "x": {
+          "field": "population",
+          "type": "quantitative",
+          "scale": {
+            "type": "log"
+          },
+          "axis": {
+            "title": "Population (log scale)",
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "titleFont": "Source Sans 3, system-ui, sans-serif",
+            "format": ",.0f",
+            "titleFontSize": 11
+          }
+        },
+        "y": {
+          "field": "ed_rate_per_100k",
+          "type": "quantitative",
+          "axis": {
+            "title": "ED presentations / 100,000",
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "titleFont": "Source Sans 3, system-ui, sans-serif",
+            "format": ",.0f",
+            "titleFontSize": 11
+          }
+        },
+        "color": {
+          "field": "area_type",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Metro Melbourne",
+              "Regional Victoria"
+            ],
+            "range": [
+              "#2E86AB",
+              "#C0392B"
+            ]
+          },
+          "legend": {
+            "title": "Area type",
+            "titleFont": "Source Sans 3, system-ui, sans-serif",
+            "labelFont": "Source Sans 3, system-ui, sans-serif"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "pha_name",
+            "title": "Area"
+          },
+          {
+            "field": "area_type",
+            "title": "Type"
+          },
+          {
+            "field": "population",
+            "title": "Population",
+            "format": ",.0f"
+          },
+          {
+            "field": "ed_rate_per_100k",
+            "title": "ED / 100k",
+            "format": ",.0f"
+          },
+          {
+            "field": "poor_health_pct",
+            "title": "Poor health %",
+            "format": ".1f"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 280,
+  "background": null,
+  "config": {
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "view": {
+      "stroke": null
+    }
+  },
+  "data": {
+    "url": "data/patient_exp_age.csv"
+  },
+  "mark": {
+    "type": "point",
+    "filled": true,
+    "size": 90,
+    "opacity": 0.9
+  },
+  "encoding": {
+    "y": {
+      "field": "age_group",
+      "type": "ordinal",
+      "sort": [
+        "15\u201324",
+        "25\u201334",
+        "35\u201344",
+        "45\u201354",
+        "55\u201364",
+        "65\u201374",
+        "75\u201384",
+        "85+",
+        "75+"
+      ],
+      "axis": {
+        "title": "Age group",
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFontSize": 11,
+        "titleFont": "Source Sans 3, system-ui, sans-serif",
+        "titleFontSize": 11
+      }
+    },
+    "x": {
+      "field": "needed_pct",
+      "type": "quantitative",
+      "axis": {
+        "title": "% who needed/used the service",
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "titleFont": "Source Sans 3, system-ui, sans-serif",
+        "titleFontSize": 11
+      }
+    },
+    "color": {
+      "field": "service",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "GP",
+          "Dental",
+          "Mental Health"
+        ],
+        "range": [
+          "#2E86AB",
+          "#27AE60",
+          "#C0392B"
+        ]
+      },
+      "legend": {
+        "title": "Service",
+        "titleFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFont": "Source Sans 3, system-ui, sans-serif"
+      }
+    },
+    "shape": {
+      "field": "service",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "GP",
+          "Dental",
+          "Mental Health"
+        ],
+        "range": [
+          "circle",
+          "diamond",
+          "square"
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "service",
+        "title": "Service"
+      },
+      {
+        "field": "age_group",
+        "title": "Age group"
+      },
+      {
+        "field": "needed_pct",
+        "title": "% who needed/used service",
+        "format": ".1f"
+      }
+    ]
+  }
+}

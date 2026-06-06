@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 400,
+  "background": null,
+  "config": {
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "view": {
+      "stroke": null
+    }
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [
+      133,
+      -28
+    ],
+    "scale": 650
+  },
+  "data": {
+    "url": "data/aus_remoteness.topojson",
+    "format": {
+      "type": "topojson",
+      "feature": "data"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "toNumber(datum.properties.ra_code)",
+      "as": "ra_code_num"
+    },
+    {
+      "lookup": "ra_code_num",
+      "from": {
+        "data": {
+          "url": "data/hospitalization_by_remoteness.csv"
+        },
+        "key": "aria_category",
+        "fields": [
+          "remoteness_area",
+          "preventable_hosp_per_1000_2023_24",
+          "hospital_separations_per_1000_2023_24"
+        ]
+      }
+    }
+  ],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#ffffff",
+    "strokeWidth": 0.8
+  },
+  "encoding": {
+    "color": {
+      "field": "preventable_hosp_per_1000_2023_24",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "orangered",
+        "domain": [
+          20,
+          70
+        ]
+      },
+      "legend": {
+        "title": "Preventable\nhosp. per 1,000",
+        "orient": "bottom-right",
+        "titleFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "gradientLength": 120
+      }
+    },
+    "tooltip": [
+      {
+        "field": "properties.ra_name",
+        "title": "Remoteness area"
+      },
+      {
+        "field": "preventable_hosp_per_1000_2023_24",
+        "title": "Preventable hosp / 1,000",
+        "format": ".1f"
+      },
+      {
+        "field": "hospital_separations_per_1000_2023_24",
+        "title": "Total hosp. separations / 1,000",
+        "format": ".1f"
+      }
+    ]
+  }
+}

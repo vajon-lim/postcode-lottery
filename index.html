@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Postcode Lottery — Healthcare Accessibility in Australia</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@3.0.0/build/grids-responsive-min.css">
+
+  <!-- Vega / Vega-Lite / Vega-Embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================================
+       HERO
+  ====================================================================== -->
+  <header id="hero">
+    <div class="hero-inner">
+      <p class="hero-kicker">FIT2179 Data Visualisation &mdash; Australia</p>
+      <h1 class="hero-title">The Postcode Lottery</h1>
+      <p class="hero-subtitle">
+        In Australia, the healthcare you receive depends as much on your address as on your health.
+        Explore the growing divide between city and remote Australians.
+      </p>
+
+      <div class="pure-g stat-grid">
+        <div class="pure-u-1 pure-u-md-1-3">
+          <div class="stat-box">
+            <span class="stat-number">½</span>
+            <span class="stat-label">as many GP visits per person in very remote areas compared to major cities</span>
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3">
+          <div class="stat-box">
+            <span class="stat-number">58%</span>
+            <span class="stat-label">of remote Australians report no nearby specialist &mdash; vs 6% in major cities</span>
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3">
+          <div class="stat-box">
+            <span class="stat-number">2.8×</span>
+            <span class="stat-label">more preventable hospitalisations in very remote areas than in major cities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       SECTION 1 — WHERE YOU LIVE SHAPES YOUR HEALTHCARE
+  ====================================================================== -->
+  <section id="section-map" class="page-section">
+    <div class="section-inner">
+
+      <div class="section-header">
+        <p class="section-number">01</p>
+        <h2 class="section-title">Where You Live Shapes Your Healthcare</h2>
+        <p class="section-intro">
+          Australia classifies its communities on a scale from MM1 (major cities) to MM7 (very remote outback).
+          The map below shows how GP access drops sharply as you move away from urban centres.
+          The further from a city, the harder it is to see a doctor.
+        </p>
+      </div>
+
+      <div class="pure-g chart-row">
+        <!-- Chart 1: Australia choropleth map (wide) -->
+        <div class="pure-u-1 pure-u-lg-3-5">
+          <div class="chart-container">
+            <h3 class="chart-title">GP Visits per Person Across Australia</h3>
+            <p class="chart-subtitle">By Modified Monash Model remoteness category, 2023–24</p>
+            <div id="chart1"></div>
+          </div>
+        </div>
+        <!-- Chart 2: Dot strip -->
+        <div class="pure-u-1 pure-u-lg-2-5">
+          <div class="chart-container">
+            <h3 class="chart-title">Health Workforce by Remoteness</h3>
+            <p class="chart-subtitle">FTE practitioners per remoteness category, 2023</p>
+            <div id="chart2"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 2 — THE GP DESERT
+  ====================================================================== -->
+  <section id="section-gp" class="page-section alt-bg">
+    <div class="section-inner">
+
+      <div class="section-header">
+        <p class="section-number">02</p>
+        <h2 class="section-title">The GP Desert</h2>
+        <p class="section-intro">
+          General practitioners are the gateway to the healthcare system. But in remote and very remote
+          communities, there are barely half the GPs per person compared to major cities &mdash; and that
+          gap has been widening since 2019.
+        </p>
+      </div>
+
+      <div class="pure-g chart-row">
+        <!-- Chart 3: Multi-line trend -->
+        <div class="pure-u-1 pure-u-lg-1-2">
+          <div class="chart-container">
+            <h3 class="chart-title">GP Numbers by Remoteness, 2020–2025</h3>
+            <p class="chart-subtitle">Total GPs per Modified Monash category</p>
+            <div id="chart3"></div>
+          </div>
+        </div>
+        <!-- Chart 4: Lollipop -->
+        <div class="pure-u-1 pure-u-lg-1-4">
+          <div class="chart-container">
+            <h3 class="chart-title">GPs per 100,000 People</h3>
+            <p class="chart-subtitle">By remoteness category, 2024</p>
+            <div id="chart4"></div>
+          </div>
+        </div>
+        <!-- Chart 5: Grouped bar (GP types) -->
+        <div class="pure-u-1 pure-u-lg-1-4">
+          <div class="chart-container">
+            <h3 class="chart-title">GP Workforce Composition</h3>
+            <p class="chart-subtitle">Vocationally registered vs trainees, 2025</p>
+            <div id="chart5"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 3 — GETTING CARE WHEN YOU NEED IT
+  ====================================================================== -->
+  <section id="section-experience" class="page-section">
+    <div class="section-inner">
+
+      <div class="section-header">
+        <p class="section-number">03</p>
+        <h2 class="section-title">Getting Care When You Need It</h2>
+        <p class="section-intro">
+          The shortage of providers has a direct human cost. Australians in outer regional and
+          remote areas are significantly more likely to delay or miss healthcare they know they need &mdash;
+          across GP visits, dental care, mental health, and emergency services.
+        </p>
+      </div>
+
+      <div class="pure-g chart-row">
+        <!-- Chart 6: Stacked area -->
+        <div class="pure-u-1 pure-u-lg-1-2">
+          <div class="chart-container">
+            <h3 class="chart-title">Difficulty Accessing GP Care Over Time</h3>
+            <p class="chart-subtitle">% who needed but struggled to see a GP, 2011–2025</p>
+            <div id="chart6"></div>
+          </div>
+        </div>
+        <!-- Chart 7: Heatmap -->
+        <div class="pure-u-1 pure-u-lg-1-2">
+          <div class="chart-container">
+            <h3 class="chart-title">Access Difficulty Across Services</h3>
+            <p class="chart-subtitle">% who needed care, by service type and year</p>
+            <div id="chart7"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pure-g chart-row">
+        <!-- Chart 8: Dot plot by age -->
+        <div class="pure-u-1">
+          <div class="chart-container">
+            <h3 class="chart-title">Who Struggles Most to Access Care</h3>
+            <p class="chart-subtitle">% who needed services, by age group — GP, Dental and Mental Health, 2024–25</p>
+            <div id="chart8"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 4 — BEYOND GPS: THE SPECIALIST GAP
+  ====================================================================== -->
+  <section id="section-specialists" class="page-section alt-bg">
+    <div class="section-inner">
+
+      <div class="section-header">
+        <p class="section-number">04</p>
+        <h2 class="section-title">Beyond GPs &mdash; The Specialist Gap</h2>
+        <p class="section-intro">
+          The shortage extends well beyond general practice. Psychologists, dentists, physiotherapists
+          and specialists are concentrated in major cities. In remote communities, many of these
+          professions are nearly absent altogether.
+        </p>
+      </div>
+
+      <div class="pure-g chart-row">
+        <!-- Chart 9: Grouped horizontal bar -->
+        <div class="pure-u-1 pure-u-lg-1-2">
+          <div class="chart-container">
+            <h3 class="chart-title">Health Workforce FTE by Profession and Remoteness</h3>
+            <p class="chart-subtitle">Full-time equivalent practitioners, 2023</p>
+            <div id="chart9"></div>
+          </div>
+        </div>
+        <!-- Chart 10: Slope chart -->
+        <div class="pure-u-1 pure-u-lg-1-2">
+          <div class="chart-container">
+            <h3 class="chart-title">The Urban–Remote Divide by Profession</h3>
+            <p class="chart-subtitle">FTE per remoteness level — steeper drop = bigger gap</p>
+            <div id="chart10"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 5 — VICTORIA UP CLOSE
+  ====================================================================== -->
+  <section id="section-victoria" class="page-section">
+    <div class="section-inner">
+
+      <div class="section-header">
+        <p class="section-number">05</p>
+        <h2 class="section-title">Victoria Up Close</h2>
+        <p class="section-intro">
+          Even within a single state, the postcode lottery plays out. Victoria's metropolitan
+          Population Health Areas enjoy far better health outcomes than its regional communities.
+          The map below reveals the pockets of disadvantage hiding behind state-level averages.
+        </p>
+      </div>
+
+      <div class="pure-g chart-row">
+        <!-- Chart 11: Victoria choropleth -->
+        <div class="pure-u-1 pure-u-lg-3-5">
+          <div class="chart-container">
+            <h3 class="chart-title">Health Outcomes Across Victoria</h3>
+            <p class="chart-subtitle">ED presentations per 1,000 population by Population Health Area</p>
+            <div id="chart11"></div>
+          </div>
+        </div>
+        <!-- Chart 12: Scatter plot -->
+        <div class="pure-u-1 pure-u-lg-2-5">
+          <div class="chart-container">
+            <h3 class="chart-title">Population Density vs Health Outcomes</h3>
+            <p class="chart-subtitle">Each point = one Victorian Population Health Area</p>
+            <div id="chart12"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 6 — THE HUMAN SCALE
+  ====================================================================== -->
+  <section id="section-human" class="page-section alt-bg">
+    <div class="section-inner">
+
+      <div class="section-header">
+        <p class="section-number">06</p>
+        <h2 class="section-title">The Human Scale</h2>
+        <p class="section-intro">
+          Behind every percentage point is a real person who couldn't see a doctor when they needed one.
+          Each square below represents one Australian in 100.
+        </p>
+      </div>
+
+      <div class="pure-g chart-row">
+        <div class="pure-u-1">
+          <div class="chart-container waffle-container">
+            <h3 class="chart-title">Out of 100 Australians &hellip; how many couldn't access a GP when needed?</h3>
+            <p class="chart-subtitle">Based on ABS Patient Experiences Survey 2024–25</p>
+            <div class="waffle-labels pure-g">
+              <div class="pure-u-1-2 waffle-label-left">Major Cities</div>
+              <div class="pure-u-1-2 waffle-label-right">Outer Regional &amp; Remote</div>
+            </div>
+            <div id="chart13"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       FOOTER
+  ====================================================================== -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="pure-g">
+
+        <div class="pure-u-1 pure-u-md-1-2">
+          <h4>About this visualisation</h4>
+          <p>
+            Created by Vajon Lim &middot; FIT2179 Data Visualisation, Monash University &middot; May 2026
+          </p>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-2">
+          <h4>Data Sources</h4>
+          <ul class="source-list">
+            <li>Australian Institute of Health and Welfare (AIHW), <em>Rural and Remote Health</em>, 2025. <a href="https://www.aihw.gov.au/reports/rural-remote-australians/rural-and-remote-health" target="_blank">aihw.gov.au</a></li>
+            <li>Australian Bureau of Statistics (ABS), <em>Patient Experiences</em>, 2024–25. <a href="https://www.abs.gov.au/statistics/health/health-services/patient-experiences/latest-release" target="_blank">abs.gov.au</a></li>
+            <li>Australian Bureau of Statistics (ABS), <em>GP Workforce Calendar Years 2020–2025</em>. <a href="https://www.health.gov.au" target="_blank">health.gov.au</a></li>
+            <li>RACGP, <em>General Practice: Health of the Nation 2025</em>. <a href="https://www.racgp.org.au/health-of-the-nation-2025" target="_blank">racgp.org.au</a></li>
+            <li>PHIDU, <em>Population Health Areas — Victoria</em>. <a href="https://phidu.torrens.edu.au" target="_blank">phidu.torrens.edu.au</a></li>
+            <li>AIHW, <em>Hospital Resources 2023–24</em>. <a href="https://www.aihw.gov.au" target="_blank">aihw.gov.au</a></li>
+            <li>Health Workforce Australia, <em>Health Workforce by Remoteness and State</em>, 2023.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       VEGA-LITE CHART EMBEDS
+       (JSON spec files will be loaded from /charts/ folder)
+  ====================================================================== -->
+  <script>
+    const embedOpts = {
+      actions: false,
+      renderer: "svg",
+      theme: "none"
+    };
+
+    // Chart 1 — Australia choropleth map
+    vegaEmbed("#chart1", "charts/chart1_aus_map.json", embedOpts).catch(console.error);
+
+    // Chart 2 — Dot strip: workforce by remoteness
+    vegaEmbed("#chart2", "charts/chart2_dotstrip.json", embedOpts).catch(console.error);
+
+    // Chart 3 — Multi-line: GP trend 2020-2025
+    vegaEmbed("#chart3", "charts/chart3_gp_trend.json", embedOpts).catch(console.error);
+
+    // Chart 4 — Lollipop: GPs per 100k by MM
+    vegaEmbed("#chart4", "charts/chart4_lollipop.json", embedOpts).catch(console.error);
+
+    // Chart 5 — Grouped bar: GP workforce composition
+    vegaEmbed("#chart5", "charts/chart5_gp_types.json", embedOpts).catch(console.error);
+
+    // Chart 6 — Stacked area: GP access difficulty over time
+    vegaEmbed("#chart6", "charts/chart6_area.json", embedOpts).catch(console.error);
+
+    // Chart 7 — Heatmap: service access by type × year
+    vegaEmbed("#chart7", "charts/chart7_heatmap.json", embedOpts).catch(console.error);
+
+    // Chart 8 — Horizontal dot plot: access by age group
+    vegaEmbed("#chart8", "charts/chart8_dotplot_age.json", embedOpts).catch(console.error);
+
+    // Chart 9 — Grouped horizontal bar: workforce by profession
+    vegaEmbed("#chart9", "charts/chart9_workforce_bar.json", embedOpts).catch(console.error);
+
+    // Chart 10 — Slope chart: urban vs remote FTE by profession
+    vegaEmbed("#chart10", "charts/chart10_slope.json", embedOpts).catch(console.error);
+
+    // Chart 11 — Victoria choropleth map
+    vegaEmbed("#chart11", "charts/chart11_vic_map.json", embedOpts).catch(console.error);
+
+    // Chart 12 — Scatter: population density vs health outcome (Victoria)
+    vegaEmbed("#chart12", "charts/chart12_scatter.json", embedOpts).catch(console.error);
+
+    // Chart 13 — Waffle chart: human scale comparison
+    vegaEmbed("#chart13", "charts/chart13_waffle.json", embedOpts).catch(console.error);
+  </script>
+
+</body>
+</html>
