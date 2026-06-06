@@ -343,44 +343,28 @@
       theme: "none"
     };
 
-    // Chart 1 — Australia choropleth map
-    vegaEmbed("#chart1", "charts/chart1_aus_map.json", embedOpts).catch(console.error);
+    // Fetch spec as object so Vega resolves data URLs relative to the page,
+    // not the chart spec's subdirectory (avoids charts/data/ path issue on GitHub Pages).
+    function embed(id, specPath) {
+      fetch(specPath)
+        .then(r => r.json())
+        .then(spec => vegaEmbed(id, spec, embedOpts))
+        .catch(console.error);
+    }
 
-    // Chart 2 — Dot strip: workforce by remoteness
-    vegaEmbed("#chart2", "charts/chart2_dotstrip.json", embedOpts).catch(console.error);
-
-    // Chart 3 — Multi-line: GP trend 2020-2025
-    vegaEmbed("#chart3", "charts/chart3_gp_trend.json", embedOpts).catch(console.error);
-
-    // Chart 4 — Lollipop: GPs per 100k by MM
-    vegaEmbed("#chart4", "charts/chart4_lollipop.json", embedOpts).catch(console.error);
-
-    // Chart 5 — Grouped bar: GP workforce composition
-    vegaEmbed("#chart5", "charts/chart5_gp_types.json", embedOpts).catch(console.error);
-
-    // Chart 6 — Stacked area: GP access difficulty over time
-    vegaEmbed("#chart6", "charts/chart6_area.json", embedOpts).catch(console.error);
-
-    // Chart 7 — Heatmap: service access by type × year
-    vegaEmbed("#chart7", "charts/chart7_heatmap.json", embedOpts).catch(console.error);
-
-    // Chart 8 — Horizontal dot plot: access by age group
-    vegaEmbed("#chart8", "charts/chart8_dotplot_age.json", embedOpts).catch(console.error);
-
-    // Chart 9 — Grouped horizontal bar: workforce by profession
-    vegaEmbed("#chart9", "charts/chart9_workforce_bar.json", embedOpts).catch(console.error);
-
-    // Chart 10 — Slope chart: urban vs remote FTE by profession
-    vegaEmbed("#chart10", "charts/chart10_slope.json", embedOpts).catch(console.error);
-
-    // Chart 11 — Victoria choropleth map
-    vegaEmbed("#chart11", "charts/chart11_vic_map.json", embedOpts).catch(console.error);
-
-    // Chart 12 — Scatter: population density vs health outcome (Victoria)
-    vegaEmbed("#chart12", "charts/chart12_scatter.json", embedOpts).catch(console.error);
-
-    // Chart 13 — Waffle chart: human scale comparison
-    vegaEmbed("#chart13", "charts/chart13_waffle.json", embedOpts).catch(console.error);
+    embed("#chart1",  "charts/chart1_aus_map.json");
+    embed("#chart2",  "charts/chart2_dotstrip.json");
+    embed("#chart3",  "charts/chart3_gp_trend.json");
+    embed("#chart4",  "charts/chart4_lollipop.json");
+    embed("#chart5",  "charts/chart5_gp_types.json");
+    embed("#chart6",  "charts/chart6_area.json");
+    embed("#chart7",  "charts/chart7_heatmap.json");
+    embed("#chart8",  "charts/chart8_dotplot_age.json");
+    embed("#chart9",  "charts/chart9_workforce_bar.json");
+    embed("#chart10", "charts/chart10_slope.json");
+    embed("#chart11", "charts/chart11_vic_map.json");
+    embed("#chart12", "charts/chart12_scatter.json");
+    embed("#chart13", "charts/chart13_waffle.json");
   </script>
 
 </body>
