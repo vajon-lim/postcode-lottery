@@ -14,10 +14,11 @@
   <link rel="stylesheet" href="https://unpkg.com/purecss@3.0.0/build/pure-min.css">
   <link rel="stylesheet" href="https://unpkg.com/purecss@3.0.0/build/grids-responsive-min.css">
 
-  <!-- Vega / Vega-Lite / Vega-Embed -->
+  <!-- Vega / Vega-Lite / Vega-Embed / Tooltip -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-tooltip@0.34.0"></script>
 
   <!-- Custom styles -->
   <link rel="stylesheet" href="css/style.css">
@@ -80,8 +81,8 @@
         <!-- Chart 1: Australia choropleth map (wide) -->
         <div class="pure-u-1 pure-u-lg-3-5">
           <div class="chart-container">
-            <h3 class="chart-title">GP Visits per Person Across Australia</h3>
-            <p class="chart-subtitle">By Modified Monash Model remoteness category, 2023–24</p>
+            <h3 class="chart-title">Medical Practitioners Across Australia</h3>
+            <p class="chart-subtitle">Medical practitioners per 100,000 people by state and territory, 2023</p>
             <div id="chart1"></div>
           </div>
         </div>
@@ -241,9 +242,10 @@
         <p class="section-number">05</p>
         <h2 class="section-title">Victoria Up Close</h2>
         <p class="section-intro">
-          Even within a single state, the postcode lottery plays out. Victoria's metropolitan
-          Population Health Areas enjoy far better health outcomes than its regional communities.
-          The map below reveals the pockets of disadvantage hiding behind state-level averages.
+          Even within a single state, the postcode lottery plays out. Victoria's inner metropolitan
+          areas enjoy far better access to primary care than its regional communities. The map below
+          uses PHIDU data to show emergency department presentation rates — a signal of where people
+          lack adequate local GP and specialist services, forcing them into hospital emergency rooms.
         </p>
       </div>
 
@@ -251,8 +253,8 @@
         <!-- Chart 11: Victoria choropleth -->
         <div class="pure-u-1 pure-u-lg-3-5">
           <div class="chart-container">
-            <h3 class="chart-title">Health Outcomes Across Victoria</h3>
-            <p class="chart-subtitle">ED presentations per 1,000 population by Population Health Area</p>
+            <h3 class="chart-title">Emergency Department Presentations Across Victoria</h3>
+            <p class="chart-subtitle">Age-standardised ED visits per 100,000 people by SA3 area; lighter shading = better primary care access</p>
             <div id="chart11"></div>
           </div>
         </div>
@@ -322,7 +324,7 @@
             <li>Australian Bureau of Statistics (ABS), <em>Patient Experiences</em>, 2024–25. <a href="https://www.abs.gov.au/statistics/health/health-services/patient-experiences/latest-release" target="_blank">abs.gov.au</a></li>
             <li>Australian Bureau of Statistics (ABS), <em>GP Workforce Calendar Years 2020–2025</em>. <a href="https://www.health.gov.au" target="_blank">health.gov.au</a></li>
             <li>RACGP, <em>General Practice: Health of the Nation 2025</em>. <a href="https://www.racgp.org.au/health-of-the-nation-2025" target="_blank">racgp.org.au</a></li>
-            <li>PHIDU, <em>Population Health Areas — Victoria</em>. <a href="https://phidu.torrens.edu.au" target="_blank">phidu.torrens.edu.au</a></li>
+            <li>PHIDU, <em>Social Health Atlas of Australia — Victoria (PHA)</em>, 2026. ED presentations, self-assessed health. <a href="https://phidu.torrens.edu.au" target="_blank">phidu.torrens.edu.au</a></li>
             <li>AIHW, <em>Hospital Resources 2023–24</em>. <a href="https://www.aihw.gov.au" target="_blank">aihw.gov.au</a></li>
             <li>Health Workforce Australia, <em>Health Workforce by Remoteness and State</em>, 2023.</li>
           </ul>
@@ -346,9 +348,15 @@
     // Fetch spec as object so Vega resolves data URLs relative to the page,
     // not the chart spec's subdirectory (avoids charts/data/ path issue on GitHub Pages).
     function embed(id, specPath) {
-      fetch(specPath)
+      fetch(specPath + '?v=16')
         .then(r => r.json())
         .then(spec => vegaEmbed(id, spec, embedOpts))
+        .then(result => {
+          // Attach vega-tooltip after embed so the handler has a proper this context
+          const handler = new vegaTooltip.Handler({theme: "light"});
+          result.view.tooltip(handler.call.bind(handler));
+          result.view.run();
+        })
         .catch(console.error);
     }
 

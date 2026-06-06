@@ -5,63 +5,38 @@
   "background": null,
   "config": {
     "font": "Source Sans 3, system-ui, sans-serif",
-    "view": {
-      "stroke": null
-    }
+    "view": {"stroke": null}
   },
-  "projection": {
-    "type": "mercator",
-    "center": [
-      133,
-      -28
-    ],
-    "scale": 650
-  },
+  "projection": {"type": "mercator"},
   "data": {
-    "url": "data/aus_remoteness.topojson",
-    "format": {
-      "type": "topojson",
-      "feature": "data"
-    }
+    "url": "data/aus_states.geojson",
+    "format": {"type": "json", "property": "features"}
   },
   "transform": [
     {
-      "calculate": "toNumber(datum.properties.ra_code)",
-      "as": "ra_code_num"
-    },
-    {
-      "lookup": "ra_code_num",
+      "lookup": "properties.STATE_NAME",
       "from": {
-        "data": {
-          "url": "data/hospitalization_by_remoteness.csv"
-        },
-        "key": "aria_category",
-        "fields": [
-          "remoteness_area",
-          "preventable_hosp_per_1000_2023_24",
-          "hospital_separations_per_1000_2023_24"
-        ]
+        "data": {"url": "data/medical_per_state.csv"},
+        "key": "state_name",
+        "fields": ["medical_per_100k", "state_abbr", "medical_fte"]
       }
     }
   ],
   "mark": {
     "type": "geoshape",
     "stroke": "#ffffff",
-    "strokeWidth": 0.8
+    "strokeWidth": 1.5
   },
   "encoding": {
     "color": {
-      "field": "preventable_hosp_per_1000_2023_24",
+      "field": "medical_per_100k",
       "type": "quantitative",
       "scale": {
-        "scheme": "orangered",
-        "domain": [
-          20,
-          70
-        ]
+        "scheme": "blues",
+        "domain": [400, 580]
       },
       "legend": {
-        "title": "Preventable\nhosp. per 1,000",
+        "title": "Medical practitioners\nper 100,000 people",
         "orient": "bottom-right",
         "titleFont": "Source Sans 3, system-ui, sans-serif",
         "labelFont": "Source Sans 3, system-ui, sans-serif",
@@ -69,20 +44,10 @@
       }
     },
     "tooltip": [
-      {
-        "field": "properties.ra_name",
-        "title": "Remoteness area"
-      },
-      {
-        "field": "preventable_hosp_per_1000_2023_24",
-        "title": "Preventable hosp / 1,000",
-        "format": ".1f"
-      },
-      {
-        "field": "hospital_separations_per_1000_2023_24",
-        "title": "Total hosp. separations / 1,000",
-        "format": ".1f"
-      }
+      {"field": "properties.STATE_NAME", "title": "State / Territory"},
+      {"field": "state_abbr", "title": "Code"},
+      {"field": "medical_per_100k", "title": "Medical practitioners per 100k", "format": ".1f"},
+      {"field": "medical_fte", "title": "Total medical FTE", "format": ",.0f"}
     ]
   }
 }
