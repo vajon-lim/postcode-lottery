@@ -1,0 +1,6 @@
+screening_type,age_group,inner_regional_pct,outer_regional_pct,remote_pct,very_remote_pct,major_cities_pct,reference_year,source
+Bowel cancer,50-74,44,,,25,,2022-23,AIHW Rural and Remote Health 2025
+Breast cancer (females),50-74,,54,,,,"2022-23",AIHW Rural and Remote Health 2025
+Breast cancer (females) inner,50-74,55,,,,,"2022-23",AIHW Rural and Remote Health 2025
+Breast cancer (females) very remote,50-74,,,,36,,"2022-23",AIHW Rural and Remote Health 2025
+Cervical cancer (females),25-74,,,,56,64,2019-23,AIHW Rural and Remote Health 2025

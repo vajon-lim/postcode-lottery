@@ -1,0 +1,8 @@
+mm_category,mm_label,gp_visits_per_person,bulk_billing_rate_pct
+MM1,Major cities,6.3,77
+MM2,Large regional cities,6.0,74
+MM3,Medium rural towns,6.2,78
+MM4,Small rural towns,6.4,80
+MM5,Very small rural towns,6.0,80
+MM6,Remote communities,4.1,78
+MM7,Very remote communities,3.3,88

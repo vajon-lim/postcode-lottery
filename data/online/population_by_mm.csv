@@ -1,0 +1,8 @@
+mm_category,mm_label,population_approx,population_pct_approx,note
+MM1,Major cities,18100000,70.0,ABS 2021 Census — all ASGS-RA1 areas
+MM2,Large regional cities,142000,0.55,Versace 2021 analysis of 2021 Census
+MM3,Medium rural towns,,,"Estimated — data not published separately"
+MM4,Small rural towns,922965,3.97,Versace 2021 analysis of 2021 Census
+MM5,Very small rural towns,,,"Estimated — data not published separately"
+MM6,Remote communities,270545,1.17,Versace 2021 analysis of 2021 Census
+MM7,Very remote communities,179638,0.77,Versace 2021 analysis of 2021 Census

@@ -1,0 +1,67 @@
+sa3_code,sa3_name,sa4_name,area_type,ed_rate_per_100k,poor_health_pct
+20501,Baw Baw,Latrobe - Gippsland,Regional Victoria,28021.9,15.26
+20502,Gippsland - East,Latrobe - Gippsland,Regional Victoria,28021.9,15.26
+20503,Gippsland - South West,Latrobe - Gippsland,Regional Victoria,28021.9,15.26
+20504,Latrobe Valley,Latrobe - Gippsland,Regional Victoria,28021.9,15.26
+20505,Wellington,Latrobe - Gippsland,Regional Victoria,28021.9,15.26
+20101,Ballarat,Ballarat,Regional Victoria,28021.9,15.26
+20102,Creswick - Daylesford - Ballan,Ballarat,Regional Victoria,28021.9,15.26
+20103,Maryborough - Pyrenees,Ballarat,Regional Victoria,28021.9,15.26
+20201,Bendigo,Bendigo,Regional Victoria,28021.9,15.26
+20202,Heathcote - Castlemaine - Kyneton,Bendigo,Regional Victoria,28021.9,15.26
+20203,Loddon - Elmore,Bendigo,Regional Victoria,28021.9,15.26
+20301,Barwon - West,Geelong,Regional Victoria,28021.9,15.26
+20302,Geelong,Geelong,Regional Victoria,28021.9,15.26
+20303,Surf Coast - Bellarine Peninsula,Geelong,Regional Victoria,28021.9,15.26
+20401,Upper Goulburn Valley,Hume,Regional Victoria,28021.9,15.26
+20402,Wangaratta - Benalla,Hume,Regional Victoria,28021.9,15.26
+20403,Wodonga - Alpine,Hume,Regional Victoria,28021.9,15.26
+20601,Brunswick - Coburg,Melbourne - Inner,Metro Melbourne,26026.7,14.38
+20602,Darebin - South,Melbourne - Inner,Metro Melbourne,26026.7,14.38
+20603,Essendon,Melbourne - Inner,Metro Melbourne,26026.7,14.38
+20604,Melbourne City,Melbourne - Inner,Metro Melbourne,26026.7,14.38
+20605,Port Phillip,Melbourne - Inner,Metro Melbourne,26026.7,14.38
+20606,Stonnington - West,Melbourne - Inner,Metro Melbourne,26026.7,14.38
+20607,Yarra,Melbourne - Inner,Metro Melbourne,26026.7,14.38
+20701,Boroondara,Melbourne - Inner East,Metro Melbourne,26026.7,14.38
+20702,Manningham - West,Melbourne - Inner East,Metro Melbourne,26026.7,14.38
+20703,Whitehorse - West,Melbourne - Inner East,Metro Melbourne,26026.7,14.38
+20801,Bayside,Melbourne - Inner South,Metro Melbourne,26026.7,14.38
+20802,Glen Eira,Melbourne - Inner South,Metro Melbourne,26026.7,14.38
+20803,Kingston,Melbourne - Inner South,Metro Melbourne,26026.7,14.38
+20804,Stonnington - East,Melbourne - Inner South,Metro Melbourne,26026.7,14.38
+20901,Banyule,Melbourne - North East,Metro Melbourne,26026.7,14.38
+20902,Darebin - North,Melbourne - North East,Metro Melbourne,26026.7,14.38
+20903,Nillumbik - Kinglake,Melbourne - North East,Metro Melbourne,26026.7,14.38
+20904,Whittlesea - Wallan,Melbourne - North East,Metro Melbourne,26026.7,14.38
+21001,Keilor,Melbourne - North West,Metro Melbourne,26026.7,14.38
+21002,Macedon Ranges,Melbourne - North West,Metro Melbourne,26026.7,14.38
+21003,Moreland - North,Melbourne - North West,Metro Melbourne,26026.7,14.38
+21004,Sunbury,Melbourne - North West,Metro Melbourne,26026.7,14.38
+21005,Tullamarine - Broadmeadows,Melbourne - North West,Metro Melbourne,26026.7,14.38
+21101,Knox,Melbourne - Outer East,Metro Melbourne,26026.7,14.38
+21102,Manningham - East,Melbourne - Outer East,Metro Melbourne,26026.7,14.38
+21103,Maroondah,Melbourne - Outer East,Metro Melbourne,26026.7,14.38
+21104,Whitehorse - East,Melbourne - Outer East,Metro Melbourne,26026.7,14.38
+21105,Yarra Ranges,Melbourne - Outer East,Metro Melbourne,26026.7,14.38
+21201,Cardinia,Melbourne - South East,Metro Melbourne,26026.7,14.38
+21202,Casey - North,Melbourne - South East,Metro Melbourne,26026.7,14.38
+21203,Casey - South,Melbourne - South East,Metro Melbourne,26026.7,14.38
+21204,Dandenong,Melbourne - South East,Metro Melbourne,26026.7,14.38
+21205,Monash,Melbourne - South East,Metro Melbourne,26026.7,14.38
+21301,Brimbank,Melbourne - West,Metro Melbourne,26026.7,14.38
+21302,Hobsons Bay,Melbourne - West,Metro Melbourne,26026.7,14.38
+21303,Maribyrnong,Melbourne - West,Metro Melbourne,26026.7,14.38
+21304,Melton - Bacchus Marsh,Melbourne - West,Metro Melbourne,26026.7,14.38
+21305,Wyndham,Melbourne - West,Metro Melbourne,26026.7,14.38
+21401,Frankston,Mornington Peninsula,Metro Melbourne,26026.7,14.38
+21402,Mornington Peninsula,Mornington Peninsula,Metro Melbourne,26026.7,14.38
+21501,Grampians,North West,Regional Victoria,28021.9,15.26
+21502,Mildura,North West,Regional Victoria,28021.9,15.26
+21503,Murray River - Swan Hill,North West,Regional Victoria,28021.9,15.26
+21601,Campaspe,Shepparton,Regional Victoria,28021.9,15.26
+21602,Moira,Shepparton,Regional Victoria,28021.9,15.26
+21603,Shepparton,Shepparton,Regional Victoria,28021.9,15.26
+21701,Glenelg - Southern Grampians,Warrnambool and South West,Regional Victoria,28021.9,15.26
+21703,Colac - Corangamite,Warrnambool and South West,Regional Victoria,28021.9,15.26
+21704,Warrnambool,Warrnambool and South West,Regional Victoria,28021.9,15.26

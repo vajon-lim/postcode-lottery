@@ -1,0 +1,9 @@
+stat_id,headline,value,unit,comparison,source
+1,GP visits in very remote vs metro,3.3 vs 6.3,visits per person per year,Remote Australians see a GP almost half as often as city residents,AIHW Rural and Remote Health 2025
+2,Specialist access gap,58,percent of remote Australians,report no nearby specialist — vs only 6% in major cities,AIHW Survey of Health Care
+3,Preventable hospitalisations,2.8x higher,in very remote vs major cities,67.7 vs 24.3 per 1000 population,AIHW Rural and Remote Health 2025
+4,GP wait times,33.6 vs 24.6,percent reporting unacceptable wait,Outer regional/remote vs major cities (2024-25),ABS Patient Experiences 2024-25
+5,Life expectancy gap,up to 8.6 years,lower for those outside metro areas,e.g. Rest of NT 73.6 vs Greater Darwin 82.2 years,AIHW Rural and Remote Health 2025
+6,Dentist availability,68.3 vs 21.4,FTE per 100000 population,Major cities vs remote/very remote,AIHW Health Workforce 2023
+7,GP FTE in remote communities,68,FTE per 100000 (MM6),Down from 78 in 2019 — a 13% decline in five years,RACGP Health of the Nation 2025
+8,Avoidable deaths males,2.4x higher,in very remote than major cities,275.5 vs 113.3 per 100000 under 75,AIHW Rural and Remote Health 2025
