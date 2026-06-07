@@ -5,98 +5,109 @@
   "background": null,
   "config": {
     "font": "Source Sans 3, system-ui, sans-serif",
-    "view": {
-      "stroke": null
-    }
+    "view": {"stroke": null}
   },
-  "data": {
-    "url": "data/gp_by_mm.csv"
-  },
+  "data": {"url": "data/gp_by_mm.csv"},
   "transform": [
+    {"filter": "datum.year == 2025"},
     {
-      "filter": "datum.year == 2025"
-    },
-    {
-      "fold": [
-        "vr_gps_fte",
-        "nonvr_gps_fte",
-        "trainee_gps_fte"
-      ],
-      "as": [
-        "gp_type",
-        "fte_value"
-      ]
+      "fold": ["vr_gps_fte", "nonvr_gps_fte", "trainee_gps_fte"],
+      "as": ["gp_type", "fte_value"]
     },
     {
       "calculate": "datum.gp_type == 'vr_gps_fte' ? 'Vocationally Registered' : datum.gp_type == 'nonvr_gps_fte' ? 'Non-VR' : 'Trainees'",
       "as": "gp_type_label"
+    },
+    {
+      "calculate": "datum.gp_type == 'vr_gps_fte' ? 1 : datum.gp_type == 'trainee_gps_fte' ? 2 : 3",
+      "as": "gp_type_order"
+    },
+    {
+      "joinaggregate": [{"op": "sum", "field": "fte_value", "as": "total_fte"}],
+      "groupby": ["mm_category"]
+    },
+    {
+      "calculate": "datum.fte_value / datum.total_fte",
+      "as": "pct"
+    },
+    {
+      "window": [{"op": "sum", "field": "pct", "as": "cum_pct"}],
+      "groupby": ["mm_category"],
+      "sort": [{"field": "gp_type_order", "order": "ascending"}]
+    },
+    {
+      "calculate": "datum.cum_pct - datum.pct / 2",
+      "as": "mid_pct"
     }
   ],
-  "encoding": {
-    "x": {
-      "field": "mm_category",
-      "type": "ordinal",
-      "axis": {
-        "title": "Remoteness Category",
-        "labelFont": "Source Sans 3, system-ui, sans-serif",
-        "titleFont": "Source Sans 3, system-ui, sans-serif",
-        "labelFontSize": 11
-      }
-    },
-    "xOffset": {
-      "field": "gp_type_label"
-    },
-    "y": {
-      "field": "fte_value",
-      "type": "quantitative",
-      "axis": {
-        "title": "FTE",
-        "labelFont": "Source Sans 3, system-ui, sans-serif",
-        "titleFont": "Source Sans 3, system-ui, sans-serif",
-        "format": ",.0f",
-        "titleFontSize": 11
-      }
-    },
-    "color": {
-      "field": "gp_type_label",
-      "type": "nominal",
-      "scale": {
-        "domain": [
-          "Vocationally Registered",
-          "Non-VR",
-          "Trainees"
-        ],
-        "range": [
-          "#0077BB",
-          "#DDAA33",
-          "#AA3377"
+  "layer": [
+    {
+      "mark": {"type": "bar"},
+      "encoding": {
+        "x": {
+          "field": "mm_category",
+          "type": "ordinal",
+          "sort": ["MM1", "MM2", "MM3", "MM4", "MM5", "MM6", "MM7"],
+          "axis": {
+            "title": "Remoteness Category",
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "titleFont": "Source Sans 3, system-ui, sans-serif",
+            "labelFontSize": 11
+          }
+        },
+        "y": {
+          "field": "fte_value",
+          "type": "quantitative",
+          "stack": "normalize",
+          "axis": {
+            "title": "Share of GP workforce",
+            "format": ".0%",
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "titleFont": "Source Sans 3, system-ui, sans-serif",
+            "titleFontSize": 11
+          }
+        },
+        "color": {
+          "field": "gp_type_label",
+          "type": "nominal",
+          "sort": ["Vocationally Registered", "Trainees", "Non-VR"],
+          "scale": {
+            "domain": ["Vocationally Registered", "Trainees", "Non-VR"],
+            "range": ["#0077BB", "#AA3377", "#DDAA33"]
+          },
+          "legend": {
+            "title": "GP Type",
+            "titleFont": "Source Sans 3, system-ui, sans-serif",
+            "labelFont": "Source Sans 3, system-ui, sans-serif"
+          }
+        },
+        "order": {"field": "gp_type_order"},
+        "tooltip": [
+          {"field": "mm_label", "title": "MM Category"},
+          {"field": "gp_type_label", "title": "GP Type"},
+          {"field": "fte_value", "title": "FTE", "format": ",.0f"},
+          {"field": "pct", "title": "Share", "format": ".1%"}
         ]
-      },
-      "legend": {
-        "title": "GP Type",
-        "titleFont": "Source Sans 3, system-ui, sans-serif",
-        "labelFont": "Source Sans 3, system-ui, sans-serif"
       }
     },
-    "tooltip": [
-      {
-        "field": "mm_label",
-        "title": "MM Category"
+    {
+      "mark": {
+        "type": "text",
+        "baseline": "middle",
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "color": "white"
       },
-      {
-        "field": "gp_type_label",
-        "title": "GP Type"
-      },
-      {
-        "field": "fte_value",
-        "title": "FTE",
-        "format": ",.0f"
+      "transform": [{"filter": "datum.pct > 0.08"}],
+      "encoding": {
+        "x": {
+          "field": "mm_category",
+          "type": "ordinal",
+          "sort": ["MM1", "MM2", "MM3", "MM4", "MM5", "MM6", "MM7"]
+        },
+        "y": {"field": "mid_pct", "type": "quantitative"},
+        "text": {"field": "pct", "format": ".0%"}
       }
-    ]
-  },
-  "mark": {
-    "type": "bar",
-    "cornerRadiusTopLeft": 2,
-    "cornerRadiusTopRight": 2
-  }
+    }
+  ]
 }

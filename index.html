@@ -120,6 +120,29 @@
 
       <div class="pure-g chart-row">
         <!-- Chart 3: Multi-line trend (full width) -->
+        <!--
+          DESIGN DECISION — Split Panel (Broken-Axis Alternative)
+          =========================================================
+          Problem: MM1 (Major Cities) has ~29,000 GPs while MM7 (Very Remote) has ~152.
+          That is a ~190× difference. On a single linear y-axis, all regional/rural lines
+          collapse into an unreadable cluster at the bottom, making it impossible to see
+          meaningful variation between MM2–MM7.
+
+          Why split panel, not log scale:
+          A log scale would technically fit all lines but visually equalises their spacing,
+          masking how extreme the real-world gap is. The split panel keeps the linear scale
+          intact in both panels, so readers perceive the true magnitude of the difference
+          (the break between panels communicates the scale gap) while still being able to
+          compare trends within each group.
+
+          Why split panel, not indexed change (2020=100):
+          Indexing shows growth rates but removes the absolute count context. The key message
+          of this section is the sheer size of the supply gap, not the rate of change.
+
+          Implementation: Vega-Lite vconcat with two independent y-scales. Top panel filters
+          to MM1 only (height 110px); bottom panel filters to MM2–MM7 (height 200px).
+          Colour scale is shared across both panels via resolve.scale.color = "shared".
+        -->
         <div class="pure-u-1">
           <div class="chart-container">
             <h3 class="chart-title">GP Numbers by Remoteness, 2020–2025</h3>
@@ -134,7 +157,7 @@
         <div class="pure-u-1 pure-u-lg-1-2">
           <div class="chart-container">
             <h3 class="chart-title">GPs per 100,000 People</h3>
-            <p class="chart-subtitle">By remoteness category, 2024</p>
+            <p class="chart-subtitle">GP clinical FTE per 100,000 population, by remoteness category, 2023</p>
             <div id="chart4"></div>
           </div>
         </div>
@@ -257,15 +280,18 @@
 
       <div class="pure-g chart-row">
         <!-- Chart 11: Victoria choropleth -->
-        <div class="pure-u-1 pure-u-lg-3-5">
+        <div class="pure-u-1">
           <div class="chart-container">
             <h3 class="chart-title">Emergency Department Presentations Across Victoria</h3>
             <p class="chart-subtitle">Age-standardised ED visits per 100,000 people by SA3 area; lighter shading = better primary care access</p>
             <div id="chart11"></div>
           </div>
         </div>
+      </div>
+
+      <div class="pure-g chart-row">
         <!-- Chart 12: Scatter plot -->
-        <div class="pure-u-1 pure-u-lg-2-5">
+        <div class="pure-u-1">
           <div class="chart-container">
             <h3 class="chart-title">Population Density vs Health Outcomes</h3>
             <p class="chart-subtitle">Each point = one Victorian Population Health Area</p>
@@ -354,7 +380,7 @@
     // Fetch spec as object so Vega resolves data URLs relative to the page,
     // not the chart spec's subdirectory (avoids charts/data/ path issue on GitHub Pages).
     function embed(id, specPath) {
-      fetch(specPath + '?v=21')
+      fetch(specPath + '?v=30')
         .then(r => r.json())
         .then(spec => vegaEmbed(id, spec, embedOpts))
         .then(result => {

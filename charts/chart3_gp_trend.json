@@ -1,142 +1,211 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
-  "height": 280,
   "background": null,
   "config": {
     "font": "Source Sans 3, system-ui, sans-serif",
-    "view": {
-      "stroke": null
-    }
+    "view": {"stroke": null}
   },
-  "data": {
-    "url": "data/gp_by_mm.csv"
-  },
-  "layer": [
+  "data": {"url": "data/gp_by_mm.csv"},
+  "resolve": {"scale": {"color": "shared"}},
+  "spacing": 6,
+  "vconcat": [
     {
-      "mark": {
-        "type": "line",
-        "point": {
-          "filled": true,
-          "size": 50
-        },
-        "strokeWidth": 2
+      "width": "container",
+      "height": 110,
+      "title": {
+        "text": "Major Cities (MM1)",
+        "anchor": "start",
+        "fontSize": 11,
+        "fontWeight": "normal",
+        "color": "#555555",
+        "dy": 4
       },
-      "encoding": {
-        "x": {
-          "field": "year",
-          "type": "ordinal",
-          "axis": {
-            "title": null,
-            "labelFont": "Source Sans 3, system-ui, sans-serif",
-            "labelFontSize": 11
-          }
-        },
-        "y": {
-          "field": "total_gps",
-          "type": "quantitative",
-          "axis": {
-            "title": "Total GPs",
-            "labelFont": "Source Sans 3, system-ui, sans-serif",
-            "titleFont": "Source Sans 3, system-ui, sans-serif",
-            "format": ",.0f",
-            "titleFontSize": 11
-          }
-        },
-        "color": {
-          "field": "mm_label",
-          "type": "nominal",
-          "scale": {
-            "range": [
-              "#0077BB",
-              "#33BBEE",
-              "#88CCEE",
-              "#DDAA33",
-              "#EE7733",
-              "#CC5500",
-              "#8B3A00"
+      "transform": [{"filter": "datum.mm_category == 'MM1'"}],
+      "layer": [
+        {
+          "mark": {"type": "line", "point": {"filled": true, "size": 50}, "strokeWidth": 2},
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "ordinal",
+              "axis": {"title": null, "labels": false, "ticks": false, "domain": false}
+            },
+            "y": {
+              "field": "total_gps",
+              "type": "quantitative",
+              "axis": {
+                "title": "Total GPs",
+                "labelFont": "Source Sans 3, system-ui, sans-serif",
+                "titleFont": "Source Sans 3, system-ui, sans-serif",
+                "format": ",.0f",
+                "titleFontSize": 11,
+                "tickCount": 3
+              }
+            },
+            "color": {
+              "field": "mm_label",
+              "type": "nominal",
+              "scale": {
+                "range": ["#0077BB","#33BBEE","#88CCEE","#DDAA33","#EE7733","#CC5500","#8B3A00"]
+              },
+              "sort": ["Major cities","Large regional cities","Medium rural towns","Small rural towns","Very small rural towns","Remote communities","Very remote communities"],
+              "legend": null
+            },
+            "tooltip": [
+              {"field": "mm_label", "title": "MM Category"},
+              {"field": "year", "title": "Year"},
+              {"field": "total_gps", "title": "Total GPs", "format": ",.0f"},
+              {"field": "gp_fte", "title": "GP FTE", "format": ",.1f"}
             ]
-          },
-          "sort": [
-            "Major cities",
-            "Large regional cities",
-            "Medium rural towns",
-            "Small rural towns",
-            "Very small rural towns",
-            "Remote communities",
-            "Very remote communities"
-          ],
-          "legend": {
-            "title": "Category",
-            "titleFont": "Source Sans 3, system-ui, sans-serif",
-            "labelFont": "Source Sans 3, system-ui, sans-serif",
-            "orient": "right",
-            "labelLimit": 180
           }
         },
-        "tooltip": [
-          {
-            "field": "mm_label",
-            "title": "MM Category"
-          },
-          {
-            "field": "year",
-            "title": "Year"
-          },
-          {
-            "field": "total_gps",
-            "title": "Total GPs",
-            "format": ",.0f"
-          },
-          {
-            "field": "gp_fte",
-            "title": "GP FTE",
-            "format": ",.1f"
+        {
+          "mark": {"type": "text", "align": "left", "dx": 6, "fontSize": 10},
+          "transform": [{"filter": "datum.year == 2025"}],
+          "encoding": {
+            "x": {"field": "year", "type": "ordinal"},
+            "y": {"field": "total_gps", "type": "quantitative"},
+            "text": {"field": "mm_category", "type": "nominal"},
+            "color": {
+              "field": "mm_label",
+              "type": "nominal",
+              "scale": {"range": ["#0077BB","#33BBEE","#88CCEE","#DDAA33","#EE7733","#CC5500","#8B3A00"]}
+            }
           }
-        ]
-      }
+        },
+        {
+          "mark": {"type": "text", "align": "left", "dx": 6, "dy": -12, "fontSize": 9, "color": "#0077BB", "fontWeight": "bold"},
+          "transform": [{"filter": "datum.year == 2025"}],
+          "encoding": {
+            "x": {"field": "year", "type": "ordinal"},
+            "y": {"field": "total_gps", "type": "quantitative"},
+            "text": {"value": "29,367 GPs"}
+          }
+        },
+        {
+          "mark": {"type": "text", "align": "right", "dx": -8, "fontSize": 9, "fontStyle": "italic", "color": "#888888"},
+          "transform": [{"filter": "datum.year == 2025 && datum.mm_category == 'MM1'"}],
+          "encoding": {
+            "x": {"field": "year", "type": "ordinal"},
+            "y": {"value": 12},
+            "text": {"value": "22× more GPs than Very Remote communities"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "text": "↕ y-axis independently scaled — panel below shows 0–6,000 range",
+            "align": "left",
+            "fontSize": 8,
+            "fontStyle": "italic",
+            "color": "#aaaaaa"
+          },
+          "data": {"values": [{}]},
+          "encoding": {
+            "x": {"value": 5},
+            "y": {"value": 104}
+          }
+        }
+      ]
     },
     {
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "dx": 6,
-        "fontSize": 10
+      "width": "container",
+      "height": 200,
+      "title": {
+        "text": "Regional & Rural Communities (MM2–MM7)",
+        "anchor": "start",
+        "fontSize": 11,
+        "fontWeight": "normal",
+        "color": "#555555",
+        "dy": 4
       },
-      "transform": [
+      "transform": [{"filter": "datum.mm_category != 'MM1'"}],
+      "layer": [
         {
-          "filter": "datum.year == 2025"
-        }
-      ],
-      "encoding": {
-        "x": {
-          "field": "year",
-          "type": "ordinal"
-        },
-        "y": {
-          "field": "total_gps",
-          "type": "quantitative"
-        },
-        "text": {
-          "field": "mm_category",
-          "type": "nominal"
-        },
-        "color": {
-          "field": "mm_label",
-          "type": "nominal",
-          "scale": {
-            "range": [
-              "#0077BB",
-              "#33BBEE",
-              "#88CCEE",
-              "#DDAA33",
-              "#EE7733",
-              "#CC5500",
-              "#8B3A00"
+          "mark": {"type": "line", "point": {"filled": true, "size": 50}, "strokeWidth": 2},
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "ordinal",
+              "axis": {
+                "title": null,
+                "labelFont": "Source Sans 3, system-ui, sans-serif",
+                "labelFontSize": 11
+              }
+            },
+            "y": {
+              "field": "total_gps",
+              "type": "quantitative",
+              "axis": {
+                "title": "Total GPs",
+                "labelFont": "Source Sans 3, system-ui, sans-serif",
+                "titleFont": "Source Sans 3, system-ui, sans-serif",
+                "format": ",.0f",
+                "titleFontSize": 11
+              }
+            },
+            "color": {
+              "field": "mm_label",
+              "type": "nominal",
+              "scale": {
+                "range": ["#0077BB","#33BBEE","#88CCEE","#DDAA33","#EE7733","#CC5500","#8B3A00"]
+              },
+              "sort": ["Major cities","Large regional cities","Medium rural towns","Small rural towns","Very small rural towns","Remote communities","Very remote communities"],
+              "legend": {
+                "title": "Category",
+                "titleFont": "Source Sans 3, system-ui, sans-serif",
+                "labelFont": "Source Sans 3, system-ui, sans-serif",
+                "orient": "right",
+                "labelLimit": 180
+              }
+            },
+            "tooltip": [
+              {"field": "mm_label", "title": "MM Category"},
+              {"field": "year", "title": "Year"},
+              {"field": "total_gps", "title": "Total GPs", "format": ",.0f"},
+              {"field": "gp_fte", "title": "GP FTE", "format": ",.1f"}
             ]
           }
+        },
+        {
+          "mark": {"type": "text", "align": "left", "dx": 6, "fontSize": 10},
+          "transform": [{"filter": "datum.year == 2025"}],
+          "encoding": {
+            "x": {"field": "year", "type": "ordinal"},
+            "y": {"field": "total_gps", "type": "quantitative"},
+            "text": {"field": "mm_category", "type": "nominal"},
+            "color": {
+              "field": "mm_label",
+              "type": "nominal",
+              "scale": {"range": ["#0077BB","#33BBEE","#88CCEE","#DDAA33","#EE7733","#CC5500","#8B3A00"]}
+            }
+          }
+        },
+        {
+          "mark": {"type": "text", "align": "left", "dx": 6, "dy": -12, "fontSize": 9, "color": "#8B3A00", "fontWeight": "bold"},
+          "transform": [{"filter": "datum.year == 2025 && datum.mm_category == 'MM7'"}],
+          "encoding": {
+            "x": {"field": "year", "type": "ordinal"},
+            "y": {"field": "total_gps", "type": "quantitative"},
+            "text": {"value": "1,310 GPs"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "text": "↕ y-axis independently scaled — panel above shows 25,000–30,000 range",
+            "align": "left",
+            "fontSize": 8,
+            "fontStyle": "italic",
+            "color": "#aaaaaa"
+          },
+          "data": {"values": [{}]},
+          "encoding": {
+            "x": {"value": 5},
+            "y": {"value": 10}
+          }
         }
-      }
+      ]
     }
   ]
 }

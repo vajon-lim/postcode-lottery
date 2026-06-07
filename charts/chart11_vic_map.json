@@ -36,7 +36,7 @@
       },
       "legend": {
         "title": "ED visits per 100,000 people",
-        "orient": "bottom-right",
+        "orient": "top-right",
         "titleFont": "Source Sans 3, system-ui, sans-serif",
         "labelFont": "Source Sans 3, system-ui, sans-serif",
         "format": ",.0f"

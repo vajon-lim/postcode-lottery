@@ -1,0 +1,57 @@
+mm_category,mm_label,mm_order,year,gp_rate_per_100k
+MM1,Major cities,1,2016,103.6
+MM2,Large regional cities,2,2016,106.8
+MM3,Medium rural towns,3,2016,120.1
+MM4,Small rural towns,4,2016,131.1
+MM5,Very small rural towns,5,2016,76.1
+MM6,Remote communities,6,2016,129.4
+MM7,Very remote communities,7,2016,152.7
+MM1,Major cities,1,2017,105.8
+MM2,Large regional cities,2,2017,108.4
+MM3,Medium rural towns,3,2017,122.5
+MM4,Small rural towns,4,2017,131.4
+MM5,Very small rural towns,5,2017,77.9
+MM6,Remote communities,6,2017,127.1
+MM7,Very remote communities,7,2017,149.7
+MM1,Major cities,1,2018,105.6
+MM2,Large regional cities,2,2018,107.9
+MM3,Medium rural towns,3,2018,122.2
+MM4,Small rural towns,4,2018,130.3
+MM5,Very small rural towns,5,2018,77.2
+MM6,Remote communities,6,2018,133.2
+MM7,Very remote communities,7,2018,156.0
+MM1,Major cities,1,2019,106.8
+MM2,Large regional cities,2,2019,106.2
+MM3,Medium rural towns,3,2019,121.5
+MM4,Small rural towns,4,2019,134.3
+MM5,Very small rural towns,5,2019,77.8
+MM6,Remote communities,6,2019,125.8
+MM7,Very remote communities,7,2019,156.7
+MM1,Major cities,1,2020,104.6
+MM2,Large regional cities,2,2020,108.3
+MM3,Medium rural towns,3,2020,125.1
+MM4,Small rural towns,4,2020,131.4
+MM5,Very small rural towns,5,2020,77.9
+MM6,Remote communities,6,2020,118.5
+MM7,Very remote communities,7,2020,159.9
+MM1,Major cities,1,2021,107.0
+MM2,Large regional cities,2,2021,102.5
+MM3,Medium rural towns,3,2021,122.0
+MM4,Small rural towns,4,2021,129.1
+MM5,Very small rural towns,5,2021,74.5
+MM6,Remote communities,6,2021,124.0
+MM7,Very remote communities,7,2021,149.2
+MM1,Major cities,1,2022,105.4
+MM2,Large regional cities,2,2022,100.0
+MM3,Medium rural towns,3,2022,117.8
+MM4,Small rural towns,4,2022,116.4
+MM5,Very small rural towns,5,2022,67.7
+MM6,Remote communities,6,2022,102.8
+MM7,Very remote communities,7,2022,129.5
+MM1,Major cities,1,2023,104.6
+MM2,Large regional cities,2,2023,109.3
+MM3,Medium rural towns,3,2023,120.1
+MM4,Small rural towns,4,2023,129.7
+MM5,Very small rural towns,5,2023,75.4
+MM6,Remote communities,6,2023,127.6
+MM7,Very remote communities,7,2023,154.5
