@@ -78,16 +78,19 @@
       </div>
 
       <div class="pure-g chart-row">
-        <!-- Chart 1: Australia choropleth map (wide) -->
-        <div class="pure-u-1 pure-u-lg-3-5">
+        <!-- Chart 1: Australia choropleth map (full width) -->
+        <div class="pure-u-1">
           <div class="chart-container">
             <h3 class="chart-title">Medical Practitioners Across Australia</h3>
             <p class="chart-subtitle">Medical practitioners per 100,000 people by state and territory, 2023</p>
             <div id="chart1"></div>
           </div>
         </div>
-        <!-- Chart 2: Dot strip -->
-        <div class="pure-u-1 pure-u-lg-2-5">
+      </div>
+
+      <div class="pure-g chart-row">
+        <!-- Chart 2: Dot strip (full width) -->
+        <div class="pure-u-1">
           <div class="chart-container">
             <h3 class="chart-title">Health Workforce by Remoteness</h3>
             <p class="chart-subtitle">FTE practitioners per remoteness category, 2023</p>
@@ -116,16 +119,19 @@
       </div>
 
       <div class="pure-g chart-row">
-        <!-- Chart 3: Multi-line trend -->
-        <div class="pure-u-1 pure-u-lg-1-2">
+        <!-- Chart 3: Multi-line trend (full width) -->
+        <div class="pure-u-1">
           <div class="chart-container">
             <h3 class="chart-title">GP Numbers by Remoteness, 2020–2025</h3>
             <p class="chart-subtitle">Total GPs per Modified Monash category</p>
             <div id="chart3"></div>
           </div>
         </div>
+      </div>
+
+      <div class="pure-g chart-row">
         <!-- Chart 4: Lollipop -->
-        <div class="pure-u-1 pure-u-lg-1-4">
+        <div class="pure-u-1 pure-u-lg-1-2">
           <div class="chart-container">
             <h3 class="chart-title">GPs per 100,000 People</h3>
             <p class="chart-subtitle">By remoteness category, 2024</p>
@@ -133,7 +139,7 @@
           </div>
         </div>
         <!-- Chart 5: Grouped bar (GP types) -->
-        <div class="pure-u-1 pure-u-lg-1-4">
+        <div class="pure-u-1 pure-u-lg-1-2">
           <div class="chart-container">
             <h3 class="chart-title">GP Workforce Composition</h3>
             <p class="chart-subtitle">Vocationally registered vs trainees, 2025</p>
@@ -348,7 +354,7 @@
     // Fetch spec as object so Vega resolves data URLs relative to the page,
     // not the chart spec's subdirectory (avoids charts/data/ path issue on GitHub Pages).
     function embed(id, specPath) {
-      fetch(specPath + '?v=16')
+      fetch(specPath + '?v=21')
         .then(r => r.json())
         .then(spec => vegaEmbed(id, spec, embedOpts))
         .then(result => {

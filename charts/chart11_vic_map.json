@@ -32,7 +32,7 @@
       "type": "quantitative",
       "scale": {
         "type": "quantile",
-        "scheme": "yelloworangered"
+        "scheme": "plasma"
       },
       "legend": {
         "title": "ED visits per 100,000 people",

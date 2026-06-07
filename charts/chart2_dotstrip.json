@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 280,
+  "height": 320,
   "background": null,
   "config": {
     "font": "Source Sans 3, system-ui, sans-serif",
@@ -12,6 +12,9 @@
   "data": {
     "url": "data/workforce_remoteness.csv"
   },
+  "transform": [
+    {"filter": "datum.fte > 0"}
+  ],
   "mark": {
     "type": "point",
     "filled": true,
@@ -38,11 +41,17 @@
     "x": {
       "field": "fte",
       "type": "quantitative",
+      "scale": {
+        "type": "log",
+        "base": 10
+      },
       "axis": {
-        "title": "Full-time equivalent (FTE)",
+        "title": "Full-time equivalent (FTE, log scale)",
         "labelFont": "Source Sans 3, system-ui, sans-serif",
         "titleFont": "Source Sans 3, system-ui, sans-serif",
-        "titleFontSize": 11
+        "titleFontSize": 11,
+        "format": ",.0f",
+        "values": [10, 100, 1000, 10000, 100000]
       }
     },
     "color": {
@@ -50,14 +59,14 @@
       "type": "nominal",
       "scale": {
         "range": [
-          "#2E86AB",
-          "#C0392B",
-          "#27AE60",
-          "#E67E22",
-          "#8E44AD",
-          "#16A085",
-          "#D35400",
-          "#2C3E50"
+          "#0077BB",
+          "#33BBEE",
+          "#EE7733",
+          "#DDAA33",
+          "#AA3377",
+          "#009988",
+          "#CC5500",
+          "#555555"
         ]
       },
       "legend": {

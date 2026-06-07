@@ -36,11 +36,13 @@
         "domain": [400, 580]
       },
       "legend": {
-        "title": "Medical practitioners\nper 100,000 people",
-        "orient": "bottom-right",
+        "title": "Medical practitioners per 100,000 people",
+        "orient": "bottom-left",
         "titleFont": "Source Sans 3, system-ui, sans-serif",
         "labelFont": "Source Sans 3, system-ui, sans-serif",
-        "gradientLength": 120
+        "gradientLength": 120,
+        "titleLimit": 240,
+        "titleLineHeight": 14
       }
     },
     "tooltip": [

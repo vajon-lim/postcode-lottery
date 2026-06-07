@@ -87,8 +87,7 @@
           "field": "gp_fte",
           "type": "quantitative",
           "scale": {
-            "scheme": "redyellowgreen",
-            "reverse": true,
+            "scheme": "plasma",
             "domain": [
               0,
               22000
