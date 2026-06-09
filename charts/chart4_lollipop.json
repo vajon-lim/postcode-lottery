@@ -85,7 +85,19 @@
       }
     },
     {
-      "mark": {"type": "text", "align": "left", "dx": 8, "fontSize": 10},
+      "mark": {"type": "point", "filled": false, "size": 320, "strokeWidth": 2.5, "color": "#EE7733"},
+      "transform": [{"filter": "datum.mm_category == 'MM5'"}],
+      "encoding": {
+        "y": {
+          "field": "mm_label",
+          "type": "ordinal",
+          "sort": ["Major cities", "Large regional cities", "Medium rural towns", "Small rural towns", "Very small rural towns", "Remote communities", "Very remote communities"]
+        },
+        "x": {"field": "gp_rate_per_100k", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "left", "dx": 14, "fontSize": 10, "baseline": "middle"},
       "encoding": {
         "y": {
           "field": "mm_label",
@@ -105,7 +117,7 @@
       }
     },
     {
-      "mark": {"type": "text", "align": "right", "dx": -8, "fontSize": 9, "fontStyle": "italic", "color": "#888888"},
+      "mark": {"type": "text", "align": "left", "dx": 44, "fontSize": 9, "fontStyle": "italic", "color": "#888888", "baseline": "middle"},
       "transform": [{"filter": "datum.mm_category == 'MM5'"}],
       "encoding": {
         "y": {
@@ -114,7 +126,7 @@
           "sort": ["Major cities", "Large regional cities", "Medium rural towns", "Small rural towns", "Very small rural towns", "Remote communities", "Very remote communities"]
         },
         "x": {"field": "gp_rate_per_100k", "type": "quantitative"},
-        "text": {"value": "lowest per-capita rate →"}
+        "text": {"value": "← lowest per-capita rate"}
       }
     }
   ]

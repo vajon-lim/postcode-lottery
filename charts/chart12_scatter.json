@@ -34,11 +34,11 @@
           "field": "ed_rate_per_100k",
           "type": "quantitative",
           "axis": {
-            "title": "ED presentations / 100,000",
+            "title": "ED presentations per 100k people",
             "labelFont": "Source Sans 3, system-ui, sans-serif",
             "titleFont": "Source Sans 3, system-ui, sans-serif",
-            "format": ",.0f",
-            "titleFontSize": 11
+            "titleFontSize": 11,
+            "labelExpr": "(datum.value / 1000) + 'k'"
           }
         },
         "color": {

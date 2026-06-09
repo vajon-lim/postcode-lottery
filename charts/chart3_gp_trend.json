@@ -87,14 +87,14 @@
           "transform": [{"filter": "datum.year == 2025 && datum.mm_category == 'MM1'"}],
           "encoding": {
             "x": {"field": "year", "type": "ordinal"},
-            "y": {"value": 12},
+            "y": {"value": 24},
             "text": {"value": "22× more GPs than Very Remote communities"}
           }
         },
         {
           "mark": {
             "type": "text",
-            "text": "↕ y-axis independently scaled — panel below shows 0–6,000 range",
+            "text": "↕ y-axis independently scaled; panel below shows 0–6,000 range",
             "align": "left",
             "fontSize": 8,
             "fontStyle": "italic",
@@ -130,7 +130,8 @@
               "axis": {
                 "title": null,
                 "labelFont": "Source Sans 3, system-ui, sans-serif",
-                "labelFontSize": 11
+                "labelFontSize": 11,
+                "labelAngle": 0
               }
             },
             "y": {
@@ -193,7 +194,7 @@
         {
           "mark": {
             "type": "text",
-            "text": "↕ y-axis independently scaled — panel above shows 25,000–30,000 range",
+            "text": "↕ y-axis independently scaled; panel above shows 25,000–30,000 range",
             "align": "left",
             "fontSize": 8,
             "fontStyle": "italic",

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Postcode Lottery — Healthcare Accessibility in Australia</title>
+  <title>The Postcode Lottery: Healthcare Accessibility in Australia</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,30 +31,30 @@
   ====================================================================== -->
   <header id="hero">
     <div class="hero-inner">
-      <p class="hero-kicker">FIT2179 Data Visualisation &mdash; Australia</p>
+      <p class="hero-kicker">FIT2179 Data Visualisation II</p>
       <h1 class="hero-title">The Postcode Lottery</h1>
       <p class="hero-subtitle">
         In Australia, the healthcare you receive depends as much on your address as on your health.
-        Explore the growing divide between city and remote Australians.
+        This is a data-driven look at the widening geographical divide and the structural barriers reshaping who gets care, and who gets left behind.
       </p>
 
       <div class="pure-g stat-grid">
         <div class="pure-u-1 pure-u-md-1-3">
           <div class="stat-box">
-            <span class="stat-number">½</span>
-            <span class="stat-label">as many GP visits per person in very remote areas compared to major cities</span>
+            <span class="stat-number">50%</span>
+            <span class="stat-label">Fewer GP visits per capita in very remote areas versus major cities.</span>
           </div>
         </div>
         <div class="pure-u-1 pure-u-md-1-3">
           <div class="stat-box">
             <span class="stat-number">58%</span>
-            <span class="stat-label">of remote Australians report no nearby specialist &mdash; vs 6% in major cities</span>
+            <span class="stat-label">Remote Australians report having no nearby specialist (compared to just <strong>6%</strong> in major cities).</span>
           </div>
         </div>
         <div class="pure-u-1 pure-u-md-1-3">
           <div class="stat-box">
             <span class="stat-number">2.8×</span>
-            <span class="stat-label">more preventable hospitalisations in very remote areas than in major cities</span>
+            <span class="stat-label">Higher rate of preventable hospitalisations in very remote areas compared to major cities.</span>
           </div>
         </div>
       </div>
@@ -93,10 +93,10 @@
         <!-- Chart 2: Dot strip (full width) -->
         <div class="pure-u-1">
           <div class="chart-container">
-            <h3 class="chart-title">Health Workforce by Remoteness</h3>
-            <p class="chart-subtitle">FTE practitioners per remoteness category, 2023</p>
+            <h3 class="chart-title">Healthcare Workforce Distribution by Remoteness</h3>
+            <p class="chart-subtitle">Full-Time Equivalent (FTE) practitioners, 2023 (Log Scale)</p>
             <div id="chart2"></div>
-            <p class="chart-insight">Every health profession is concentrated in cities. The log scale is necessary because the gap spans from over 90,000 FTE medical practitioners in major cities to just a handful in very remote areas. Some professions are virtually absent outside urban centres.</p>
+            <p class="chart-insight">Health professionals are overwhelmingly concentrated in major urban centres. A log scale is required to visualize this massive disparity side-by-side: while cities host tens of thousands of medical practitioners, remote areas rely on just a handful. Specialized roles, such as psychologists and podiatrists, become practically absent as remoteness increases.</p>
           </div>
         </div>
       </div>
@@ -114,37 +114,11 @@
         <p class="section-number">02</p>
         <h2 class="section-title">The GP Desert</h2>
         <p class="section-intro">
-          General practitioners are the gateway to the healthcare system. But in remote and very remote
-          communities, there are barely half the GPs per person compared to major cities &mdash; and that
-          gap has been widening since 2019.
+          General practitioners are the gateway to the healthcare system. While remote areas receive targeted government support, residents in smaller rural towns are caught in a growing "GP desert," facing severe per-capita shortages compared to their metropolitan counterparts.
         </p>
       </div>
 
       <div class="pure-g chart-row">
-        <!-- Chart 3: Multi-line trend (full width) -->
-        <!--
-          DESIGN DECISION — Split Panel (Broken-Axis Alternative)
-          =========================================================
-          Problem: MM1 (Major Cities) has ~29,000 GPs while MM7 (Very Remote) has ~152.
-          That is a ~190× difference. On a single linear y-axis, all regional/rural lines
-          collapse into an unreadable cluster at the bottom, making it impossible to see
-          meaningful variation between MM2–MM7.
-
-          Why split panel, not log scale:
-          A log scale would technically fit all lines but visually equalises their spacing,
-          masking how extreme the real-world gap is. The split panel keeps the linear scale
-          intact in both panels, so readers perceive the true magnitude of the difference
-          (the break between panels communicates the scale gap) while still being able to
-          compare trends within each group.
-
-          Why split panel, not indexed change (2020=100):
-          Indexing shows growth rates but removes the absolute count context. The key message
-          of this section is the sheer size of the supply gap, not the rate of change.
-
-          Implementation: Vega-Lite vconcat with two independent y-scales. Top panel filters
-          to MM1 only (height 110px); bottom panel filters to MM2–MM7 (height 200px).
-          Colour scale is shared across both panels via resolve.scale.color = "shared".
-        -->
         <div class="pure-u-1">
           <div class="chart-container">
             <h3 class="chart-title">GP Numbers by Remoteness, 2020–2025</h3>
@@ -189,9 +163,7 @@
         <p class="section-number">03</p>
         <h2 class="section-title">Getting Care When You Need It</h2>
         <p class="section-intro">
-          The shortage of providers has a direct human cost. Australians in outer regional and
-          remote areas are significantly more likely to delay or miss healthcare they know they need &mdash;
-          across GP visits, dental care, mental health, and emergency services.
+          The shortage of providers has a direct human cost. Even beyond geography, everyday Australians are increasingly forced to delay or miss the healthcare they need. Driven by rising costs and severe shortages in specific sectors like after-hours care, access barriers are shifting dramatically across different services and age groups.
         </p>
       </div>
 
@@ -202,7 +174,7 @@
             <h3 class="chart-title">Difficulty Accessing GP Care Over Time</h3>
             <p class="chart-subtitle">% of people who needed GP care but faced access barriers, 2013–2025 (ABS Patient Experience Survey)</p>
             <div id="chart6"></div>
-            <p class="chart-insight">About 1 in 4 Australians who needed a GP faced some access barrier every year. Since 2021, cost has driven a sharp rise: as bulk billing declined, cost-related barriers nearly quadrupled. More people are now skipping the doctor because they can't afford the gap fee.</p>
+            <p class="chart-insight">Historically, roughly 1 in 4 Australians who needed a GP faced some form of access barrier. However, the nature of these barriers is shifting. Since reaching a pandemic low, cost-related barriers have surged dramatically, nearly quadrupling as financial pressures increasingly force patients to skip needed medical care.</p>
           </div>
         </div>
         <!-- Chart 7: Heatmap -->
@@ -220,10 +192,10 @@
         <!-- Chart 8: Dot plot by age -->
         <div class="pure-u-1">
           <div class="chart-container">
-            <h3 class="chart-title">Who Struggles Most to Access Care</h3>
+            <h3 class="chart-title">Healthcare Demand by Age</h3>
             <p class="chart-subtitle">% who needed services, by age group: GP, Dental and Mental Health, 2024-25</p>
             <div id="chart8"></div>
-            <p class="chart-insight">Mental health service use is highest among young adults (15-34) and declines sharply with age, reflecting both need and access patterns. GP use rises steadily with age, with nearly all Australians aged 75+ seeing a doctor each year. Dental visits remain relatively consistent across adult age groups.</p>
+            <p class="chart-insight">Healthcare reliance shifts drastically across a lifetime. Mental health service usage peaks sharply among young adults (15-34) before declining with age. Conversely, reliance on general practitioners rises steadily as Australians get older, with nearly all residents aged 75+ requiring a doctor each year. Meanwhile, the need for dental care remains relatively constant across all adult demographics.</p>
           </div>
         </div>
       </div>
@@ -239,11 +211,9 @@
 
       <div class="section-header">
         <p class="section-number">04</p>
-        <h2 class="section-title">Beyond GPs &mdash; The Specialist Gap</h2>
+        <h2 class="section-title">Beyond GPs: The Specialist Gap</h2>
         <p class="section-intro">
-          The shortage extends well beyond general practice. Psychologists, dentists, physiotherapists
-          and specialists are concentrated in major cities. In remote communities, many of these
-          professions are nearly absent altogether.
+          The shortage extends well beyond general practice. Specialized fields like psychology, dentistry, and allied health are heavily concentrated in major cities. In remote communities, several of these professions report zero workforce presence.
         </p>
       </div>
 
@@ -254,7 +224,7 @@
             <h3 class="chart-title">Health Workforce FTE by Profession and Remoteness</h3>
             <p class="chart-subtitle">FTE per 100,000 population by remoteness, 2023; each panel uses its own scale so smaller professions are as readable as Medical Practitioners</p>
             <div id="chart9"></div>
-            <p class="chart-insight">Each panel has its own scale, so small professions like Podiatrists are as readable as the dominant Medical workforce. Medical Practitioners peak at 516 per 100k in Major Cities and remain present everywhere. ATSI Health Practitioners are the opposite: nearly absent in cities (0.9 per 100k) but climbing to 68 per 100k in Very Remote areas. Grey 0 labels confirm that Psychologists, Paramedics, and Podiatrists have no reported presence beyond Major Cities.</p>
+            <p class="chart-insight">Because workforce sizes vary vastly, each panel uses an independent scale. Medical Practitioners maintain a baseline presence everywhere, peaking at 516 per 100k in Major Cities. Conversely, ATSI Health Practitioners follow an inverse pattern: nearly absent in cities (0.9 per 100k) but surging to 68 per 100k in Very Remote areas. For Psychologists, Paramedicine Practitioners, and Podiatrists, the data shows no reported presence beyond Major Cities.</p>
           </div>
         </div>
         <!-- Chart 10: Dumbbell plot -->
@@ -263,7 +233,7 @@
             <h3 class="chart-title">The Urban-Regional Workforce Gap, by Profession</h3>
             <p class="chart-subtitle">FTE per 100,000 population; blue dot = Major Cities, orange dot = Outer Regional (orange dot on the axis means zero practitioners)</p>
             <div id="chart10"></div>
-            <p class="chart-insight">Medical practitioners remain the most abundant workforce in Outer Regional areas at 316 per 100,000, though that is 39% below Major Cities. Dental practitioners and chiropractors also retain a partial presence. Psychologists, paramedicine practitioners, and podiatrists have zero practitioners in Outer Regional areas. The one exception is ATSI Health Practitioners: just 0.9 per 100,000 in Major Cities but 10.8 in Outer Regional, a 12-fold increase reflecting this workforce's specific deployment to underserved communities.</p>
+            <p class="chart-insight">Even comparing Major Cities directly to Outer Regional areas reveals a stark disparity. The medical practitioner workforce drops by nearly 40% per capita outside major centres, while dental and chiropractic care also decline. As established, psychologists, paramedicine practitioners, and podiatrists show zero reported presence. The clear outlier is the ATSI Health Practitioner workforce, which sees a 12-fold increase, from just 0.9 per 100,000 in Major Cities to 10.8 in Outer Regional areas, reflecting targeted deployment to underserved communities.</p>
           </div>
         </div>
       </div>
@@ -279,12 +249,12 @@
 
       <div class="section-header">
         <p class="section-number">05</p>
-        <h2 class="section-title">Victoria Up Close</h2>
+        <h2 class="section-title">Victoria Up Close: The Hospital Spillover</h2>
         <p class="section-intro">
           Even within a single state, the postcode lottery plays out. Victoria's inner metropolitan
           areas enjoy far better access to primary care than its regional communities. The map below
-          uses PHIDU data to show emergency department presentation rates — a signal of where people
-          lack adequate local GP and specialist services, forcing them into hospital emergency rooms.
+          illustrates emergency department presentation rates, a strong indicator of where a lack of
+          adequate local GP and specialist services is forcing residents into hospital emergency rooms.
         </p>
       </div>
 
@@ -293,11 +263,11 @@
         <div class="pure-u-1">
           <div class="chart-container">
             <h3 class="chart-title">Emergency Department Presentations Across Victoria</h3>
-            <p class="chart-subtitle">Age-standardised ED visits per 100,000 people by SA3 area; lighter shading = better primary care access</p>
+            <p class="chart-subtitle">Age-standardised ED visits per 100,000 people by SA3 area (lighter shading = fewer ED visits)</p>
             <div class="map-zoom-controls">
               <label class="map-zoom-label" for="vic-map-zoom">Zoom</label>
               <select id="vic-map-zoom" class="map-zoom-select" onchange="setVicMapZoom(this.value)">
-                <option value="1.0" selected>100% — Full Victoria</option>
+                <option value="1.0" selected>100% (Full Victoria)</option>
                 <option value="0.75">75%</option>
                 <option value="0.5">50%</option>
                 <option value="0.3">30%</option>
@@ -313,10 +283,10 @@
         <!-- Chart 12: Scatter plot -->
         <div class="pure-u-1">
           <div class="chart-container">
-            <h3 class="chart-title">Population Size vs Health Outcomes</h3>
-            <p class="chart-subtitle">Each point = one Victorian Population Health Area; trend lines show the direction for each group</p>
+            <h3 class="chart-title">The Regional Burden on Emergency Departments</h3>
+            <p class="chart-subtitle">Each dot represents a local community (Population Health Area). The trend lines show the average trajectory for each region.</p>
             <div id="chart12"></div>
-            <p class="chart-insight">The linear trend line for Regional Victoria sits above Metro Melbourne's across the full population range, confirming that regional communities face higher ED presentation rates at every scale. Metro Melbourne's line trends downward as areas grow larger, reflecting better access to alternatives. The dots are faded to 30% opacity to keep the trend lines as the primary story.</p>
+            <p class="chart-insight">Across all population sizes, the trend line for Regional Victoria sits distinctly above Metro Melbourne's, confirming that regional communities carry a heavier burden of ED presentations. This gap is most severe in smaller population centres, with the disparity gradually narrowing as local area populations grow.</p>
           </div>
         </div>
       </div>
@@ -334,8 +304,8 @@
         <p class="section-number">06</p>
         <h2 class="section-title">The Human Scale</h2>
         <p class="section-intro">
-          Behind every percentage point is a real person who couldn't see a doctor when they needed one.
-          Each square below represents one Australian in 100.
+          Behind every statistic is a real person who struggled to see a doctor when they needed one.
+          In the charts below, each square represents one Australian in 100.
         </p>
       </div>
 
@@ -343,9 +313,9 @@
         <div class="pure-u-1">
           <div class="chart-container waffle-container">
             <h3 class="chart-title">The Regional Penalty in Healthcare Access</h3>
-            <p class="chart-subtitle">Based on ABS Patient Experiences Survey 2024–25</p>
+            <p class="chart-subtitle">Proportion of people who needed GP care but delayed or missed it, 2024–25 (ABS)</p>
             <div id="chart13"></div>
-            <p class="chart-insight">Location determines access. In major cities, 24 out of 100 people went without GP care when they needed it. In regional and remote areas, that number climbs to 30, meaning remote residents face a 25% higher risk of missing out on vital medical attention.</p>
+            <p class="chart-insight">Location dictates access. In major cities, 26 out of every 100 people who needed a GP delayed or missed their care. In regional and remote areas, that number climbs to 30. This means residents living outside major urban centres face a 15% higher relative risk of missing out on, or being forced to delay, vital medical attention.</p>
           </div>
         </div>
       </div>
@@ -363,7 +333,7 @@
         <div class="pure-u-1 pure-u-md-1-2">
           <h4>About this visualisation</h4>
           <p>
-            Created by Vajon Lim &middot; FIT2179 Data Visualisation, Monash University &middot; May 2026
+            &middot; Created by Vajon Lim <br> &middot; FIT2179 Data Visualisation, Monash University <br> &middot; May 2026
           </p>
         </div>
 
@@ -374,7 +344,7 @@
             <li>Australian Bureau of Statistics (ABS), <em>Patient Experiences</em>, 2024–25. <a href="https://www.abs.gov.au/statistics/health/health-services/patient-experiences/latest-release" target="_blank">abs.gov.au</a></li>
             <li>Australian Bureau of Statistics (ABS), <em>GP Workforce Calendar Years 2020–2025</em>. <a href="https://www.health.gov.au" target="_blank">health.gov.au</a></li>
             <li>RACGP, <em>General Practice: Health of the Nation 2025</em>. <a href="https://www.racgp.org.au/health-of-the-nation-2025" target="_blank">racgp.org.au</a></li>
-            <li>PHIDU, <em>Social Health Atlas of Australia — Victoria (PHA)</em>, 2026. ED presentations, self-assessed health. <a href="https://phidu.torrens.edu.au" target="_blank">phidu.torrens.edu.au</a></li>
+            <li>PHIDU, <em>Social Health Atlas of Australia: Victoria (PHA)</em>, 2026. ED presentations, self-assessed health. <a href="https://phidu.torrens.edu.au" target="_blank">phidu.torrens.edu.au</a></li>
             <li>AIHW, <em>Hospital Resources 2023–24</em>. <a href="https://www.aihw.gov.au" target="_blank">aihw.gov.au</a></li>
             <li>Health Workforce Australia, <em>Health Workforce by Remoteness and State</em>, 2023.</li>
           </ul>
@@ -398,7 +368,7 @@
     // Fetch spec as object so Vega resolves data URLs relative to the page,
     // not the chart spec's subdirectory (avoids charts/data/ path issue on GitHub Pages).
     function embed(id, specPath) {
-      fetch(specPath + '?v=38')
+      fetch(specPath + '?v=43')
         .then(r => r.json())
         .then(spec => vegaEmbed(id, spec, embedOpts))
         .then(result => {
@@ -414,7 +384,7 @@
     const VIC_MAP_BASE_SCALE = 2980;
 
     function embedChart11(projScale) {
-      fetch('charts/chart11_vic_map.json?v=38')
+      fetch('charts/chart11_vic_map.json?v=43')
         .then(r => r.json())
         .then(spec => {
           spec.projection.scale = projScale || VIC_MAP_BASE_SCALE;

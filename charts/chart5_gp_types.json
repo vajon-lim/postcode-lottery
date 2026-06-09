@@ -52,7 +52,8 @@
             "title": "Remoteness Category",
             "labelFont": "Source Sans 3, system-ui, sans-serif",
             "titleFont": "Source Sans 3, system-ui, sans-serif",
-            "labelFontSize": 11
+            "labelFontSize": 11,
+            "labelAngle": 0
           }
         },
         "y": {

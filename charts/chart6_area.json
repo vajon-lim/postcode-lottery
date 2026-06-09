@@ -73,7 +73,7 @@
       "encoding": {
         "x": {"field": "year", "type": "ordinal"},
         "y": {"field": "y", "type": "quantitative"},
-        "text": {"value": "8.8% — cost peak"}
+        "text": {"value": "8.8%: cost peak"}
       }
     },
     {
