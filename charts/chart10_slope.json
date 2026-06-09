@@ -20,7 +20,7 @@
           "field": "profession",
           "type": "ordinal",
           "sort": [
-            "ATSI Health Practitioners",
+            "First Nations Health Practitioners",
             "Medical Practitioners",
             "Dental Practitioners",
             "Chiropractors",
@@ -51,7 +51,7 @@
           "field": "profession",
           "type": "ordinal",
           "sort": [
-            "ATSI Health Practitioners",
+            "First Nations Health Practitioners",
             "Medical Practitioners",
             "Dental Practitioners",
             "Chiropractors",

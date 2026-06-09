@@ -237,6 +237,31 @@ a:hover {
   line-height: 1.55;
 }
 
+/* Sidebar insight — text to the right of a chart on large screens */
+.chart-insight-sidebar {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 63.99em) {
+  .chart-insight-sidebar {
+    border-left: none;
+    border-top: 1px solid var(--color-border);
+    padding-left: 0;
+    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+    height: auto;
+    align-items: flex-start;
+  }
+}
+
 /* Map zoom controls */
 .map-zoom-controls {
   display: flex;

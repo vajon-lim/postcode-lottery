@@ -1,10 +1,10 @@
 remoteness,profession,headcount,fte,avg_age,avg_hours
-Inner Regional,ATSI Health Practitioners,156,155,43.0,37.7
+Inner Regional,First Nations Health Practitioners,156,155,43.0,37.7
 Inner Regional,Chinese Medicine Practitioners,477,349,50.9,27.8
 Inner Regional,Chiropractors,1035,854,43.2,31.3
 Inner Regional,Dental Practitioners,3447,3203,41.2,35.3
 Inner Regional,Medical Practitioners,18155,17500,45.0,38.0
-Major Cities,ATSI Health Practitioners,159,168,43.2,40.0
+Major Cities,First Nations Health Practitioners,159,168,43.2,40.0
 Major Cities,Chinese Medicine Practitioners,3526,2697,52.1,29.1
 Major Cities,Chiropractors,4391,3714,41.8,32.1
 Major Cities,Dental Practitioners,19685,17674,42.5,34.1
@@ -12,17 +12,17 @@ Major Cities,Medical Practitioners,95353,96998,45.3,40.2
 Major Cities,Paramedicine Practitioners,13126,15110,36.7,43.7
 Major Cities,Podiatrists,4267,4024,39.6,35.8
 Major Cities,Psychologists,30654,25653,45.3,31.8
-Outer Regional,ATSI Health Practitioners,213,223,46.4,39.7
+Outer Regional,First Nations Health Practitioners,213,223,46.4,39.7
 Outer Regional,Chinese Medicine Practitioners,107,81,55.1,28.7
 Outer Regional,Chiropractors,310,262,43.8,32.1
 Outer Regional,Dental Practitioners,1208,1116,42.3,35.1
 Outer Regional,Medical Practitioners,6932,6500,46.0,39.0
-Remote,ATSI Health Practitioners,102,115,45.0,42.8
+Remote,First Nations Health Practitioners,102,115,45.0,42.8
 Remote,Chinese Medicine Practitioners,0,6,47.7,22.1
 Remote,Chiropractors,39,32,38.7,30.9
 Remote,Dental Practitioners,117,109,42.0,35.4
 Remote,Medical Practitioners,936,991,44.4,42.0
-Very Remote,ATSI Health Practitioners,110,123,46.9,42.5
+Very Remote,First Nations Health Practitioners,110,123,46.9,42.5
 Very Remote,Chinese Medicine Practitioners,0,0,41.0,20.0
 Very Remote,Chiropractors,14,11,39.8,29.3
 Very Remote,Dental Practitioners,32,30,47.3,36.2

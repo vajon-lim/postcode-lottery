@@ -7,7 +7,7 @@
   },
   "data": {"url": "data/gp_by_mm.csv"},
   "resolve": {"scale": {"color": "shared"}},
-  "spacing": 6,
+  "spacing": 32,
   "vconcat": [
     {
       "width": "container",

@@ -71,32 +71,31 @@
         <p class="section-number">01</p>
         <h2 class="section-title">Where You Live Shapes Your Healthcare</h2>
         <p class="section-intro">
-          Australia classifies its communities on a scale from MM1 (major cities) to MM7 (very remote outback).
-          The map below shows how GP access drops sharply as you move away from urban centres.
-          The further from a city, the harder it is to see a doctor.
+          When we look at healthcare access across Australia, geography is destiny. But as the map
+          below shows, looking simply at state and territory averages doesn't tell the whole story.
         </p>
       </div>
 
       <div class="pure-g chart-row">
-        <!-- Chart 1: Australia choropleth map (full width) -->
+        <!-- Chart 1: Australia choropleth map -->
         <div class="pure-u-1">
           <div class="chart-container">
-            <h3 class="chart-title">Medical Practitioners Across Australia</h3>
+            <h3 class="chart-title">State Averages Hide the Local Reality</h3>
             <p class="chart-subtitle">Medical practitioners per 100,000 people by state and territory, 2023</p>
             <div id="chart1"></div>
-            <p class="chart-insight">The Northern Territory and South Australia have the highest concentrations of medical practitioners per capita. But state-level averages mask the real story: the divide is not between states, it's between cities and the country <em>within</em> each state.</p>
+            <p class="chart-insight">The Northern Territory and Tasmania boast the highest concentrations of medical practitioners per capita. However, state-level averages mask the real story. The true divide isn't between states, it's between cities and the country within them. To see this, we must look at Australia's remoteness scale, ranging from major cities (MM1) to the very remote outback (MM7).</p>
           </div>
         </div>
       </div>
 
       <div class="pure-g chart-row">
-        <!-- Chart 2: Dot strip (full width) -->
+        <!-- Chart 2: Dot strip -->
         <div class="pure-u-1">
           <div class="chart-container">
-            <h3 class="chart-title">Healthcare Workforce Distribution by Remoteness</h3>
+            <h3 class="chart-title">The Geographic Divide in Health Professions</h3>
             <p class="chart-subtitle">Full-Time Equivalent (FTE) practitioners, 2023 (Log Scale)</p>
             <div id="chart2"></div>
-            <p class="chart-insight">Health professionals are overwhelmingly concentrated in major urban centres. A log scale is required to visualize this massive disparity side-by-side: while cities host tens of thousands of medical practitioners, remote areas rely on just a handful. Specialized roles, such as psychologists and podiatrists, become practically absent as remoteness increases.</p>
+            <p class="chart-insight">Health professionals are overwhelmingly concentrated in major urban centres. A log scale is required to visualise this massive disparity side-by-side: while cities host tens of thousands of medical practitioners, remote areas rely on just a handful. Specialised roles, such as psychologists and podiatrists, become practically absent as remoteness increases.</p>
           </div>
         </div>
       </div>
@@ -213,7 +212,7 @@
         <p class="section-number">04</p>
         <h2 class="section-title">Beyond GPs: The Specialist Gap</h2>
         <p class="section-intro">
-          The shortage extends well beyond general practice. Specialized fields like psychology, dentistry, and allied health are heavily concentrated in major cities. In remote communities, several of these professions report zero workforce presence.
+          The shortage extends well beyond general practice. Specialised fields like psychology, dentistry, and allied health are heavily concentrated in major cities. In remote communities, several of these professions report zero workforce presence.
         </p>
       </div>
 
@@ -221,10 +220,10 @@
         <!-- Chart 9: Small multiples horizontal bar -->
         <div class="pure-u-1">
           <div class="chart-container">
-            <h3 class="chart-title">Health Workforce FTE by Profession and Remoteness</h3>
+            <h3 class="chart-title">Health Workforce Full-Time Equivalents (FTE) by Profession and Remoteness</h3>
             <p class="chart-subtitle">FTE per 100,000 population by remoteness, 2023; each panel uses its own scale so smaller professions are as readable as Medical Practitioners</p>
             <div id="chart9"></div>
-            <p class="chart-insight">Because workforce sizes vary vastly, each panel uses an independent scale. Medical Practitioners maintain a baseline presence everywhere, peaking at 516 per 100k in Major Cities. Conversely, ATSI Health Practitioners follow an inverse pattern: nearly absent in cities (0.9 per 100k) but surging to 68 per 100k in Very Remote areas. For Psychologists, Paramedicine Practitioners, and Podiatrists, the data shows no reported presence beyond Major Cities.</p>
+            <p class="chart-insight">Because workforce sizes vary vastly, each panel uses an independent scale. Medical Practitioners maintain a baseline presence everywhere, peaking at 516 per 100k in Major Cities. Conversely, First Nations Health Practitioners follow an inverse pattern: nearly absent in cities (0.9 per 100k) but surging to 68 per 100k in Very Remote areas. For Psychologists, Paramedicine Practitioners, and Podiatrists, the data shows no reported presence beyond Major Cities.</p>
           </div>
         </div>
         <!-- Chart 10: Dumbbell plot -->
@@ -233,7 +232,7 @@
             <h3 class="chart-title">The Urban-Regional Workforce Gap, by Profession</h3>
             <p class="chart-subtitle">FTE per 100,000 population; blue dot = Major Cities, orange dot = Outer Regional (orange dot on the axis means zero practitioners)</p>
             <div id="chart10"></div>
-            <p class="chart-insight">Even comparing Major Cities directly to Outer Regional areas reveals a stark disparity. The medical practitioner workforce drops by nearly 40% per capita outside major centres, while dental and chiropractic care also decline. As established, psychologists, paramedicine practitioners, and podiatrists show zero reported presence. The clear outlier is the ATSI Health Practitioner workforce, which sees a 12-fold increase, from just 0.9 per 100,000 in Major Cities to 10.8 in Outer Regional areas, reflecting targeted deployment to underserved communities.</p>
+            <p class="chart-insight">Even comparing Major Cities directly to Outer Regional areas reveals a stark disparity. The medical practitioner workforce drops by nearly 40% per capita outside major centres, while dental and chiropractic care also decline. As established, psychologists, paramedicine practitioners, and podiatrists show zero reported presence. The clear outlier is the First Nations Health Practitioner workforce, which sees a 12-fold increase, from just 0.9 per 100,000 in Major Cities to 10.8 in Outer Regional areas, reflecting targeted deployment to underserved communities.</p>
           </div>
         </div>
       </div>
@@ -265,12 +264,12 @@
             <h3 class="chart-title">Emergency Department Presentations Across Victoria</h3>
             <p class="chart-subtitle">Age-standardised ED visits per 100,000 people by SA3 area (lighter shading = fewer ED visits)</p>
             <div class="map-zoom-controls">
-              <label class="map-zoom-label" for="vic-map-zoom">Zoom</label>
+              <label class="map-zoom-label" for="vic-map-zoom">View</label>
               <select id="vic-map-zoom" class="map-zoom-select" onchange="setVicMapZoom(this.value)">
-                <option value="1.0" selected>100% (Full Victoria)</option>
-                <option value="0.75">75%</option>
-                <option value="0.5">50%</option>
-                <option value="0.3">30%</option>
+                <option value="1.0" selected>Entire State</option>
+                <option value="0.75">Regional Hubs</option>
+                <option value="0.5">Greater Melbourne</option>
+                <option value="0.3">Inner Metro</option>
               </select>
             </div>
             <div id="chart11"></div>
@@ -368,7 +367,7 @@
     // Fetch spec as object so Vega resolves data URLs relative to the page,
     // not the chart spec's subdirectory (avoids charts/data/ path issue on GitHub Pages).
     function embed(id, specPath) {
-      fetch(specPath + '?v=43')
+      fetch(specPath + '?v=46')
         .then(r => r.json())
         .then(spec => vegaEmbed(id, spec, embedOpts))
         .then(result => {
@@ -384,7 +383,7 @@
     const VIC_MAP_BASE_SCALE = 2980;
 
     function embedChart11(projScale) {
-      fetch('charts/chart11_vic_map.json?v=43')
+      fetch('charts/chart11_vic_map.json?v=46')
         .then(r => r.json())
         .then(spec => {
           spec.projection.scale = projScale || VIC_MAP_BASE_SCALE;
