@@ -228,6 +228,47 @@ a:hover {
   line-height: 1.4;
 }
 
+.chart-insight {
+  font-size: 0.82rem;
+  color: var(--color-text);
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  line-height: 1.55;
+}
+
+/* Map zoom controls */
+.map-zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.map-zoom-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.map-zoom-select {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-text);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.map-zoom-select:hover {
+  border-color: var(--color-text-light);
+}
+
 /* Ensure Vega-Lite SVGs fill their containers */
 .chart-container .vega-embed {
   width: 100%;

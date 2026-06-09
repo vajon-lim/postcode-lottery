@@ -5,42 +5,29 @@
   "background": null,
   "config": {
     "font": "Source Sans 3, system-ui, sans-serif",
-    "view": {
-      "stroke": null
-    }
+    "view": {"stroke": null}
   },
-  "data": {
-    "url": "data/phidu_vic.csv"
-  },
+  "data": {"url": "data/phidu_vic.csv"},
   "transform": [
-    {
-      "filter": "datum.ed_rate_per_100k != null && datum.population != null"
-    },
-    {
-      "filter": "datum.population > 5000"
-    }
+    {"filter": "datum.ed_rate_per_100k != null && datum.population != null"},
+    {"filter": "datum.population > 5000"}
   ],
   "layer": [
     {
-      "mark": {
-        "type": "point",
-        "filled": true,
-        "opacity": 0.55,
-        "size": 60
-      },
+      "mark": {"type": "point", "filled": true, "opacity": 0.3, "size": 55},
       "encoding": {
         "x": {
           "field": "population",
           "type": "quantitative",
-          "scale": {
-            "type": "log"
-          },
+          "scale": {"type": "log"},
           "axis": {
-            "title": "Population (log scale)",
+            "title": "PHA population (log scale; larger areas tend to be more urban)",
             "labelFont": "Source Sans 3, system-ui, sans-serif",
             "titleFont": "Source Sans 3, system-ui, sans-serif",
-            "format": ",.0f",
-            "titleFontSize": 11
+            "titleFontSize": 10,
+            "values": [6000, 10000, 20000, 40000, 80000, 160000, 300000],
+            "labelAngle": 0,
+            "labelExpr": "(datum.value / 1000) + 'k'"
           }
         },
         "y": {
@@ -58,14 +45,8 @@
           "field": "area_type",
           "type": "nominal",
           "scale": {
-            "domain": [
-              "Metro Melbourne",
-              "Regional Victoria"
-            ],
-            "range": [
-              "#0077BB",
-              "#EE7733"
-            ]
+            "domain": ["Metro Melbourne", "Regional Victoria"],
+            "range": ["#0077BB", "#EE7733"]
           },
           "legend": {
             "title": "Area type",
@@ -74,30 +55,38 @@
           }
         },
         "tooltip": [
-          {
-            "field": "pha_name",
-            "title": "Area"
-          },
-          {
-            "field": "area_type",
-            "title": "Type"
-          },
-          {
-            "field": "population",
-            "title": "Population",
-            "format": ",.0f"
-          },
-          {
-            "field": "ed_rate_per_100k",
-            "title": "ED / 100k",
-            "format": ",.0f"
-          },
-          {
-            "field": "poor_health_pct",
-            "title": "Poor health %",
-            "format": ".1f"
-          }
+          {"field": "pha_name", "title": "Area"},
+          {"field": "area_type", "title": "Type"},
+          {"field": "population", "title": "Population", "format": ",.0f"},
+          {"field": "ed_rate_per_100k", "title": "ED / 100k", "format": ",.0f"},
+          {"field": "poor_health_pct", "title": "Poor health %", "format": ".1f"}
         ]
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.ed_rate_per_100k != null && datum.population != null"},
+        {"filter": "datum.population > 5000"},
+        {"calculate": "log(datum.population) / log(10)", "as": "log_pop"},
+        {"regression": "ed_rate_per_100k", "on": "log_pop", "groupby": ["area_type"], "extent": [3.7, 5.48]},
+        {"calculate": "pow(10, datum.log_pop)", "as": "pop_display"}
+      ],
+      "mark": {"type": "line", "strokeWidth": 3.5, "opacity": 1},
+      "encoding": {
+        "x": {
+          "field": "pop_display",
+          "type": "quantitative",
+          "scale": {"type": "log"}
+        },
+        "y": {"field": "ed_rate_per_100k", "type": "quantitative"},
+        "color": {
+          "field": "area_type",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Metro Melbourne", "Regional Victoria"],
+            "range": ["#0077BB", "#EE7733"]
+          }
+        }
       }
     }
   ]

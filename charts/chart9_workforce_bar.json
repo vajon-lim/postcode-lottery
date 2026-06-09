@@ -1,106 +1,106 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
-  "height": 320,
   "background": null,
   "config": {
     "font": "Source Sans 3, system-ui, sans-serif",
-    "view": {
-      "stroke": null
-    }
+    "view": {"stroke": null}
   },
-  "data": {
-    "url": "data/workforce_remoteness.csv"
+  "data": {"url": "data/workforce_per_capita.csv"},
+  "facet": {
+    "field": "profession",
+    "type": "ordinal",
+    "header": {
+      "title": null,
+      "labelFont": "Source Sans 3, system-ui, sans-serif",
+      "labelFontSize": 10,
+      "labelFontWeight": "bold",
+      "labelOrient": "top",
+      "labelAnchor": "start"
+    },
+    "sort": [
+      "Medical Practitioners",
+      "ATSI Health Practitioners",
+      "Psychologists",
+      "Paramedicine Practitioners",
+      "Dental Practitioners",
+      "Podiatrists",
+      "Chiropractors",
+      "Chinese Medicine Practitioners"
+    ]
   },
-  "mark": {
-    "type": "bar",
-    "cornerRadiusTopRight": 2,
-    "cornerRadiusBottomRight": 2
-  },
-  "encoding": {
-    "y": {
-      "field": "profession",
-      "type": "ordinal",
-      "axis": {
-        "title": null,
-        "labelFont": "Source Sans 3, system-ui, sans-serif",
-        "labelFontSize": 10
-      }
-    },
-    "yOffset": {
-      "field": "remoteness",
-      "type": "ordinal",
-      "sort": [
-        "Major Cities",
-        "Inner Regional",
-        "Outer Regional",
-        "Remote",
-        "Very Remote"
-      ]
-    },
-    "x": {
-      "field": "fte",
-      "type": "quantitative",
-      "axis": {
-        "title": "FTE",
-        "labelFont": "Source Sans 3, system-ui, sans-serif",
-        "titleFont": "Source Sans 3, system-ui, sans-serif",
-        "format": ",.0f",
-        "titleFontSize": 11
-      }
-    },
-    "color": {
-      "field": "remoteness",
-      "type": "nominal",
-      "sort": [
-        "Major Cities",
-        "Inner Regional",
-        "Outer Regional",
-        "Remote",
-        "Very Remote"
-      ],
-      "scale": {
-        "domain": [
-          "Major Cities",
-          "Inner Regional",
-          "Outer Regional",
-          "Remote",
-          "Very Remote"
-        ],
-        "range": [
-          "#0077BB",
-          "#33BBEE",
-          "#DDAA33",
-          "#EE7733",
-          "#AA3377"
-        ]
-      },
-      "legend": {
-        "title": "Remoteness",
-        "titleFont": "Source Sans 3, system-ui, sans-serif",
-        "labelFont": "Source Sans 3, system-ui, sans-serif",
-        "orient": "bottom"
-      }
-    },
-    "tooltip": [
+  "columns": 2,
+  "spec": {
+    "width": 360,
+    "height": 95,
+    "layer": [
       {
-        "field": "profession",
-        "title": "Profession"
+        "mark": {
+          "type": "bar",
+          "cornerRadiusTopRight": 2,
+          "cornerRadiusBottomRight": 2
+        },
+        "encoding": {
+          "y": {
+            "field": "remoteness",
+            "type": "ordinal",
+            "sort": ["Major Cities", "Inner Regional", "Outer Regional", "Remote", "Very Remote"],
+            "axis": {
+              "title": null,
+              "labelFont": "Source Sans 3, system-ui, sans-serif",
+              "labelFontSize": 9
+            }
+          },
+          "x": {
+            "field": "fte_per_100k",
+            "type": "quantitative",
+            "axis": {
+              "title": "FTE per 100k",
+              "labelFont": "Source Sans 3, system-ui, sans-serif",
+              "titleFont": "Source Sans 3, system-ui, sans-serif",
+              "format": ".0f",
+              "titleFontSize": 9,
+              "tickCount": 4
+            }
+          },
+          "color": {
+            "field": "remoteness",
+            "type": "nominal",
+            "sort": ["Major Cities", "Inner Regional", "Outer Regional", "Remote", "Very Remote"],
+            "scale": {
+              "domain": ["Major Cities", "Inner Regional", "Outer Regional", "Remote", "Very Remote"],
+              "range": ["#0077BB", "#33BBEE", "#DDAA33", "#EE7733", "#AA3377"]
+            },
+            "legend": null
+          },
+          "tooltip": [
+            {"field": "profession", "title": "Profession"},
+            {"field": "remoteness", "title": "Remoteness"},
+            {"field": "fte_per_100k", "title": "FTE per 100,000", "format": ".1f"},
+            {"field": "fte", "title": "Raw FTE", "format": ",.0f"}
+          ]
+        }
       },
       {
-        "field": "remoteness",
-        "title": "Remoteness"
-      },
-      {
-        "field": "fte",
-        "title": "FTE",
-        "format": ",.0f"
-      },
-      {
-        "field": "headcount",
-        "title": "Headcount",
-        "format": ",.0f"
+        "transform": [{"filter": "datum.fte_per_100k == 0"}],
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "dx": 4,
+          "fontSize": 8,
+          "color": "#AAAAAA",
+          "baseline": "middle"
+        },
+        "encoding": {
+          "y": {
+            "field": "remoteness",
+            "type": "ordinal",
+            "sort": ["Major Cities", "Inner Regional", "Outer Regional", "Remote", "Very Remote"]
+          },
+          "x": {"field": "fte_per_100k", "type": "quantitative"},
+          "text": {"value": "0"}
+        }
       }
     ]
-  }
+  },
+  "resolve": {"scale": {"x": "independent"}}
 }

@@ -1,146 +1,90 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 320,
+  "height": 340,
   "background": null,
   "config": {
     "font": "Source Sans 3, system-ui, sans-serif",
-    "view": {
-      "stroke": null
-    }
+    "view": {"stroke": null}
   },
-  "data": {
-    "url": "data/workforce_remoteness.csv"
-  },
+  "data": {"url": "data/workforce_per_capita.csv"},
   "transform": [
-    {
-      "filter": "datum.remoteness == 'Major Cities' || datum.remoteness == 'Outer Regional'"
-    },
-    {
-      "calculate": "datum.remoteness == 'Major Cities' ? 0 : 1",
-      "as": "x_pos"
-    }
+    {"filter": "datum.remoteness == 'Major Cities' || datum.remoteness == 'Outer Regional'"}
   ],
   "layer": [
     {
-      "mark": {
-        "type": "line",
-        "strokeWidth": 2,
-        "opacity": 0.7
-      },
+      "mark": {"type": "line", "color": "#CCCCCC", "strokeWidth": 2.5},
       "encoding": {
-        "detail": {
-          "field": "profession"
-        },
-        "x": {
-          "field": "x_pos",
-          "type": "ordinal",
-          "scale": {
-            "domain": [
-              0,
-              1
-            ],
-            "padding": 0.3
-          },
-          "axis": {
-            "title": null,
-            "labelExpr": "datum.value == 0 ? 'Major Cities' : 'Outer Regional'",
-            "labelFont": "Source Sans 3, system-ui, sans-serif",
-            "labelFontSize": 12,
-            "labelFontWeight": "bold"
-          }
-        },
+        "x": {"field": "fte_per_100k", "type": "quantitative"},
         "y": {
-          "field": "fte",
-          "type": "quantitative",
-          "scale": {
-            "type": "log"
-          },
-          "axis": {
-            "title": "FTE (log scale)",
-            "labelFont": "Source Sans 3, system-ui, sans-serif",
-            "titleFont": "Source Sans 3, system-ui, sans-serif",
-            "format": ",.0f",
-            "titleFontSize": 11
-          }
-        },
-        "color": {
           "field": "profession",
-          "type": "nominal",
-          "scale": {
-            "range": [
-              "#0077BB",
-              "#33BBEE",
-              "#EE7733",
-              "#DDAA33",
-              "#AA3377",
-              "#009988",
-              "#CC5500",
-              "#555555"
-            ]
-          },
-          "legend": {
-            "title": "Profession",
-            "titleFont": "Source Sans 3, system-ui, sans-serif",
-            "labelFont": "Source Sans 3, system-ui, sans-serif",
-            "orient": "right"
-          }
-        }
+          "type": "ordinal",
+          "sort": [
+            "ATSI Health Practitioners",
+            "Medical Practitioners",
+            "Dental Practitioners",
+            "Chiropractors",
+            "Chinese Medicine Practitioners",
+            "Paramedicine Practitioners",
+            "Podiatrists",
+            "Psychologists"
+          ]
+        },
+        "detail": {"field": "profession"}
       }
     },
     {
-      "mark": {
-        "type": "point",
-        "filled": true,
-        "size": 80
-      },
+      "mark": {"type": "point", "filled": true, "size": 110, "opacity": 0.9},
       "encoding": {
         "x": {
-          "field": "x_pos",
-          "type": "ordinal"
+          "field": "fte_per_100k",
+          "type": "quantitative",
+          "axis": {
+            "title": "FTE per 100,000 population",
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "titleFont": "Source Sans 3, system-ui, sans-serif",
+            "format": ".0f",
+            "titleFontSize": 11
+          }
         },
         "y": {
-          "field": "fte",
-          "type": "quantitative",
-          "scale": {
-            "type": "log"
+          "field": "profession",
+          "type": "ordinal",
+          "sort": [
+            "ATSI Health Practitioners",
+            "Medical Practitioners",
+            "Dental Practitioners",
+            "Chiropractors",
+            "Chinese Medicine Practitioners",
+            "Paramedicine Practitioners",
+            "Podiatrists",
+            "Psychologists"
+          ],
+          "axis": {
+            "title": null,
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "labelFontSize": 10
           }
         },
         "color": {
-          "field": "profession",
+          "field": "remoteness",
           "type": "nominal",
           "scale": {
-            "range": [
-              "#0077BB",
-              "#33BBEE",
-              "#EE7733",
-              "#DDAA33",
-              "#AA3377",
-              "#009988",
-              "#CC5500",
-              "#555555"
-            ]
+            "domain": ["Major Cities", "Outer Regional"],
+            "range": ["#0077BB", "#EE7733"]
+          },
+          "legend": {
+            "title": "Region",
+            "orient": "top-right",
+            "titleFont": "Source Sans 3, system-ui, sans-serif",
+            "labelFont": "Source Sans 3, system-ui, sans-serif"
           }
         },
         "tooltip": [
-          {
-            "field": "profession",
-            "title": "Profession"
-          },
-          {
-            "field": "remoteness",
-            "title": "Remoteness"
-          },
-          {
-            "field": "fte",
-            "title": "FTE",
-            "format": ",.0f"
-          },
-          {
-            "field": "headcount",
-            "title": "Headcount",
-            "format": ",.0f"
-          }
+          {"field": "profession", "title": "Profession"},
+          {"field": "remoteness", "title": "Region"},
+          {"field": "fte_per_100k", "title": "FTE per 100,000", "format": ".1f"},
+          {"field": "fte", "title": "Raw FTE", "format": ",.0f"}
         ]
       }
     }

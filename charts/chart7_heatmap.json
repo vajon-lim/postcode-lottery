@@ -10,7 +10,7 @@
     }
   },
   "data": {
-    "url": "data/patient_exp_heatmap.csv"
+    "url": "data/service_access_difficulty.csv"
   },
   "mark": "rect",
   "encoding": {
@@ -27,13 +27,7 @@
     "y": {
       "field": "service",
       "type": "ordinal",
-      "sort": [
-        "GP",
-        "Dental",
-        "Hospital",
-        "ED",
-        "After-Hours GP"
-      ],
+      "sort": ["After-Hours GP", "Dental", "Medical Specialist", "Hospital", "GP"],
       "axis": {
         "title": null,
         "labelFont": "Source Sans 3, system-ui, sans-serif",
@@ -41,13 +35,13 @@
       }
     },
     "color": {
-      "field": "needed_pct",
+      "field": "unmet_pct",
       "type": "quantitative",
       "scale": {
-        "scheme": "blues"
+        "scheme": "oranges"
       },
       "legend": {
-        "title": "% who saw\nservice",
+        "title": "% who couldn't\naccess care",
         "titleFont": "Source Sans 3, system-ui, sans-serif",
         "labelFont": "Source Sans 3, system-ui, sans-serif",
         "gradientLength": 100
@@ -63,8 +57,8 @@
         "title": "Year"
       },
       {
-        "field": "needed_pct",
-        "title": "% saw service",
+        "field": "unmet_pct",
+        "title": "% who needed but couldn't access",
         "format": ".1f"
       }
     ]

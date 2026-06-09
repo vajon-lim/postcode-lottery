@@ -1,0 +1,41 @@
+remoteness,profession,fte,fte_per_100k
+Major Cities,ATSI Health Practitioners,168,0.9
+Major Cities,Chinese Medicine Practitioners,2697,14.3
+Major Cities,Chiropractors,3714,19.8
+Major Cities,Dental Practitioners,17674,94.0
+Major Cities,Medical Practitioners,96998,515.9
+Major Cities,Paramedicine Practitioners,15110,80.4
+Major Cities,Podiatrists,4024,21.4
+Major Cities,Psychologists,25653,136.5
+Inner Regional,ATSI Health Practitioners,155,3.3
+Inner Regional,Chinese Medicine Practitioners,349,7.5
+Inner Regional,Chiropractors,854,18.4
+Inner Regional,Dental Practitioners,3203,69.0
+Inner Regional,Medical Practitioners,17500,377.2
+Inner Regional,Paramedicine Practitioners,0,0.0
+Inner Regional,Podiatrists,0,0.0
+Inner Regional,Psychologists,0,0.0
+Outer Regional,ATSI Health Practitioners,223,10.8
+Outer Regional,Chinese Medicine Practitioners,81,3.9
+Outer Regional,Chiropractors,262,12.7
+Outer Regional,Dental Practitioners,1116,54.2
+Outer Regional,Medical Practitioners,6500,315.5
+Outer Regional,Paramedicine Practitioners,0,0.0
+Outer Regional,Podiatrists,0,0.0
+Outer Regional,Psychologists,0,0.0
+Remote,ATSI Health Practitioners,115,40.6
+Remote,Chinese Medicine Practitioners,6,2.1
+Remote,Chiropractors,32,11.3
+Remote,Dental Practitioners,109,38.5
+Remote,Medical Practitioners,991,350.2
+Remote,Paramedicine Practitioners,0,0.0
+Remote,Podiatrists,0,0.0
+Remote,Psychologists,0,0.0
+Very Remote,ATSI Health Practitioners,123,68.3
+Very Remote,Chinese Medicine Practitioners,0,0.0
+Very Remote,Chiropractors,11,6.1
+Very Remote,Dental Practitioners,30,16.7
+Very Remote,Medical Practitioners,539,299.4
+Very Remote,Paramedicine Practitioners,0,0.0
+Very Remote,Podiatrists,0,0.0
+Very Remote,Psychologists,0,0.0

@@ -21,7 +21,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-tooltip@0.34.0"></script>
 
   <!-- Custom styles -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=2">
 </head>
 
 <body>
@@ -84,6 +84,7 @@
             <h3 class="chart-title">Medical Practitioners Across Australia</h3>
             <p class="chart-subtitle">Medical practitioners per 100,000 people by state and territory, 2023</p>
             <div id="chart1"></div>
+            <p class="chart-insight">The Northern Territory and South Australia have the highest concentrations of medical practitioners per capita. But state-level averages mask the real story: the divide is not between states, it's between cities and the country <em>within</em> each state.</p>
           </div>
         </div>
       </div>
@@ -95,6 +96,7 @@
             <h3 class="chart-title">Health Workforce by Remoteness</h3>
             <p class="chart-subtitle">FTE practitioners per remoteness category, 2023</p>
             <div id="chart2"></div>
+            <p class="chart-insight">Every health profession is concentrated in cities. The log scale is necessary because the gap spans from over 90,000 FTE medical practitioners in major cities to just a handful in very remote areas. Some professions are virtually absent outside urban centres.</p>
           </div>
         </div>
       </div>
@@ -148,6 +150,7 @@
             <h3 class="chart-title">GP Numbers by Remoteness, 2020–2025</h3>
             <p class="chart-subtitle">Total GPs per Modified Monash category</p>
             <div id="chart3"></div>
+            <p class="chart-insight">Major Cities have 22 times more GPs than Very Remote communities, and the gap has been growing. The two panels use independent scales; the break between them represents the full size of the divide. Regional towns saw modest growth; very remote communities almost none.</p>
           </div>
         </div>
       </div>
@@ -159,6 +162,7 @@
             <h3 class="chart-title">GPs per 100,000 People</h3>
             <p class="chart-subtitle">GP clinical FTE per 100,000 population, by remoteness category, 2023</p>
             <div id="chart4"></div>
+            <p class="chart-insight">Per capita, many remote areas actually have comparable or more GPs than cities, as small populations and government incentive programs push the rate up. The real gap is in very small rural towns (MM5), which have the fewest GPs per person, caught between urban supply and remote-area programs.</p>
           </div>
         </div>
         <!-- Chart 5: Grouped bar (GP types) -->
@@ -167,6 +171,7 @@
             <h3 class="chart-title">GP Workforce Composition</h3>
             <p class="chart-subtitle">Vocationally registered vs trainees, 2025</p>
             <div id="chart5"></div>
+            <p class="chart-insight">Over a third of GPs in regional towns are trainees on mandatory rural training rotations, not permanent practitioners. Major Cities run on 92% fully qualified GPs.</p>
           </div>
         </div>
       </div>
@@ -195,16 +200,18 @@
         <div class="pure-u-1 pure-u-lg-1-2">
           <div class="chart-container">
             <h3 class="chart-title">Difficulty Accessing GP Care Over Time</h3>
-            <p class="chart-subtitle">% who needed but struggled to see a GP, 2011–2025</p>
+            <p class="chart-subtitle">% of people who needed GP care but faced access barriers, 2013–2025 (ABS Patient Experience Survey)</p>
             <div id="chart6"></div>
+            <p class="chart-insight">About 1 in 4 Australians who needed a GP faced some access barrier every year. Since 2021, cost has driven a sharp rise: as bulk billing declined, cost-related barriers nearly quadrupled. More people are now skipping the doctor because they can't afford the gap fee.</p>
           </div>
         </div>
         <!-- Chart 7: Heatmap -->
         <div class="pure-u-1 pure-u-lg-1-2">
           <div class="chart-container">
             <h3 class="chart-title">Access Difficulty Across Services</h3>
-            <p class="chart-subtitle">% who needed care, by service type and year</p>
+            <p class="chart-subtitle">% who needed care but could not access it, by service type (ABS Patient Experience Survey)</p>
             <div id="chart7"></div>
+            <p class="chart-insight">After-hours GP care is by far the hardest service to access: in 2022-23, 38% of people who needed it could not get it. Dental care has persistently high unmet need at around 14-17%. Regular GP appointments remain the easiest to access, with under 2% missing out, but the gap widens sharply for after-hours and specialist care.</p>
           </div>
         </div>
       </div>
@@ -214,8 +221,9 @@
         <div class="pure-u-1">
           <div class="chart-container">
             <h3 class="chart-title">Who Struggles Most to Access Care</h3>
-            <p class="chart-subtitle">% who needed services, by age group — GP, Dental and Mental Health, 2024–25</p>
+            <p class="chart-subtitle">% who needed services, by age group: GP, Dental and Mental Health, 2024-25</p>
             <div id="chart8"></div>
+            <p class="chart-insight">Mental health service use is highest among young adults (15-34) and declines sharply with age, reflecting both need and access patterns. GP use rises steadily with age, with nearly all Australians aged 75+ seeing a doctor each year. Dental visits remain relatively consistent across adult age groups.</p>
           </div>
         </div>
       </div>
@@ -240,20 +248,22 @@
       </div>
 
       <div class="pure-g chart-row">
-        <!-- Chart 9: Grouped horizontal bar -->
-        <div class="pure-u-1 pure-u-lg-1-2">
+        <!-- Chart 9: Small multiples horizontal bar -->
+        <div class="pure-u-1">
           <div class="chart-container">
             <h3 class="chart-title">Health Workforce FTE by Profession and Remoteness</h3>
-            <p class="chart-subtitle">Full-time equivalent practitioners, 2023</p>
+            <p class="chart-subtitle">FTE per 100,000 population by remoteness, 2023; each panel uses its own scale so smaller professions are as readable as Medical Practitioners</p>
             <div id="chart9"></div>
+            <p class="chart-insight">Each panel has its own scale, so small professions like Podiatrists are as readable as the dominant Medical workforce. Medical Practitioners peak at 516 per 100k in Major Cities and remain present everywhere. ATSI Health Practitioners are the opposite: nearly absent in cities (0.9 per 100k) but climbing to 68 per 100k in Very Remote areas. Grey 0 labels confirm that Psychologists, Paramedics, and Podiatrists have no reported presence beyond Major Cities.</p>
           </div>
         </div>
-        <!-- Chart 10: Slope chart -->
-        <div class="pure-u-1 pure-u-lg-1-2">
+        <!-- Chart 10: Dumbbell plot -->
+        <div class="pure-u-1">
           <div class="chart-container">
-            <h3 class="chart-title">The Urban–Remote Divide by Profession</h3>
-            <p class="chart-subtitle">FTE per remoteness level — steeper drop = bigger gap</p>
+            <h3 class="chart-title">The Urban-Regional Workforce Gap, by Profession</h3>
+            <p class="chart-subtitle">FTE per 100,000 population; blue dot = Major Cities, orange dot = Outer Regional (orange dot on the axis means zero practitioners)</p>
             <div id="chart10"></div>
+            <p class="chart-insight">Medical practitioners remain the most abundant workforce in Outer Regional areas at 316 per 100,000, though that is 39% below Major Cities. Dental practitioners and chiropractors also retain a partial presence. Psychologists, paramedicine practitioners, and podiatrists have zero practitioners in Outer Regional areas. The one exception is ATSI Health Practitioners: just 0.9 per 100,000 in Major Cities but 10.8 in Outer Regional, a 12-fold increase reflecting this workforce's specific deployment to underserved communities.</p>
           </div>
         </div>
       </div>
@@ -284,7 +294,17 @@
           <div class="chart-container">
             <h3 class="chart-title">Emergency Department Presentations Across Victoria</h3>
             <p class="chart-subtitle">Age-standardised ED visits per 100,000 people by SA3 area; lighter shading = better primary care access</p>
+            <div class="map-zoom-controls">
+              <label class="map-zoom-label" for="vic-map-zoom">Zoom</label>
+              <select id="vic-map-zoom" class="map-zoom-select" onchange="setVicMapZoom(this.value)">
+                <option value="1.0" selected>100% — Full Victoria</option>
+                <option value="0.75">75%</option>
+                <option value="0.5">50%</option>
+                <option value="0.3">30%</option>
+              </select>
+            </div>
             <div id="chart11"></div>
+            <p class="chart-insight">Victoria's outer west and north (areas with limited local GPs) show the highest emergency department use. When people can't access primary care, the hospital ED becomes the fallback. High ED rates are often a symptom of inadequate GP access, not just higher illness rates.</p>
           </div>
         </div>
       </div>
@@ -293,9 +313,10 @@
         <!-- Chart 12: Scatter plot -->
         <div class="pure-u-1">
           <div class="chart-container">
-            <h3 class="chart-title">Population Density vs Health Outcomes</h3>
-            <p class="chart-subtitle">Each point = one Victorian Population Health Area</p>
+            <h3 class="chart-title">Population Size vs Health Outcomes</h3>
+            <p class="chart-subtitle">Each point = one Victorian Population Health Area; trend lines show the direction for each group</p>
             <div id="chart12"></div>
+            <p class="chart-insight">The linear trend line for Regional Victoria sits above Metro Melbourne's across the full population range, confirming that regional communities face higher ED presentation rates at every scale. Metro Melbourne's line trends downward as areas grow larger, reflecting better access to alternatives. The dots are faded to 30% opacity to keep the trend lines as the primary story.</p>
           </div>
         </div>
       </div>
@@ -321,13 +342,10 @@
       <div class="pure-g chart-row">
         <div class="pure-u-1">
           <div class="chart-container waffle-container">
-            <h3 class="chart-title">Out of 100 Australians &hellip; how many couldn't access a GP when needed?</h3>
+            <h3 class="chart-title">The Regional Penalty in Healthcare Access</h3>
             <p class="chart-subtitle">Based on ABS Patient Experiences Survey 2024–25</p>
-            <div class="waffle-labels pure-g">
-              <div class="pure-u-1-2 waffle-label-left">Major Cities</div>
-              <div class="pure-u-1-2 waffle-label-right">Outer Regional &amp; Remote</div>
-            </div>
             <div id="chart13"></div>
+            <p class="chart-insight">Location determines access. In major cities, 24 out of 100 people went without GP care when they needed it. In regional and remote areas, that number climbs to 30, meaning remote residents face a 25% higher risk of missing out on vital medical attention.</p>
           </div>
         </div>
       </div>
@@ -380,7 +398,7 @@
     // Fetch spec as object so Vega resolves data URLs relative to the page,
     // not the chart spec's subdirectory (avoids charts/data/ path issue on GitHub Pages).
     function embed(id, specPath) {
-      fetch(specPath + '?v=30')
+      fetch(specPath + '?v=38')
         .then(r => r.json())
         .then(spec => vegaEmbed(id, spec, embedOpts))
         .then(result => {
@@ -390,6 +408,30 @@
           result.view.run();
         })
         .catch(console.error);
+    }
+
+    // Base projection scale for chart11 at 100% zoom
+    const VIC_MAP_BASE_SCALE = 2980;
+
+    function embedChart11(projScale) {
+      fetch('charts/chart11_vic_map.json?v=38')
+        .then(r => r.json())
+        .then(spec => {
+          spec.projection.scale = projScale || VIC_MAP_BASE_SCALE;
+          document.querySelector('#chart11').innerHTML = '';
+          return vegaEmbed('#chart11', spec, embedOpts);
+        })
+        .then(result => {
+          const handler = new vegaTooltip.Handler({theme: "light"});
+          result.view.tooltip(handler.call.bind(handler));
+          result.view.run();
+        })
+        .catch(console.error);
+    }
+
+    function setVicMapZoom(level) {
+      const factor = parseFloat(level);
+      embedChart11(Math.round(VIC_MAP_BASE_SCALE / factor));
     }
 
     embed("#chart1",  "charts/chart1_aus_map.json");
@@ -402,7 +444,7 @@
     embed("#chart8",  "charts/chart8_dotplot_age.json");
     embed("#chart9",  "charts/chart9_workforce_bar.json");
     embed("#chart10", "charts/chart10_slope.json");
-    embed("#chart11", "charts/chart11_vic_map.json");
+    embedChart11();
     embed("#chart12", "charts/chart12_scatter.json");
     embed("#chart13", "charts/chart13_waffle.json");
   </script>

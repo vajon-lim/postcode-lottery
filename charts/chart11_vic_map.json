@@ -10,7 +10,7 @@
   "projection": {
     "type": "mercator",
     "fit": false,
-    "center": [145.469, -36.613],
+    "center": [144.9631, -37.8136],
     "scale": 2980
   },
   "data": {

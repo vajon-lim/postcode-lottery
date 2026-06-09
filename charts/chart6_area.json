@@ -5,78 +5,93 @@
   "background": null,
   "config": {
     "font": "Source Sans 3, system-ui, sans-serif",
-    "view": {
-      "stroke": null
-    }
+    "view": {"stroke": null}
   },
-  "data": {
-    "url": "data/patient_exp_heatmap.csv"
-  },
-  "transform": [
+  "data": {"url": "data/gp_access_difficulty.csv"},
+  "layer": [
     {
-      "filter": "datum.service == 'GP' || datum.service == 'After-Hours GP'"
-    }
-  ],
-  "mark": {
-    "type": "area",
-    "opacity": 0.8,
-    "line": true
-  },
-  "encoding": {
-    "x": {
-      "field": "year",
-      "type": "ordinal",
-      "axis": {
-        "title": null,
-        "labelFont": "Source Sans 3, system-ui, sans-serif",
-        "labelFontSize": 10,
-        "labelAngle": -30
-      }
-    },
-    "y": {
-      "field": "needed_pct",
-      "type": "quantitative",
-      "stack": "zero",
-      "axis": {
-        "title": "% who saw service",
-        "labelFont": "Source Sans 3, system-ui, sans-serif",
-        "titleFont": "Source Sans 3, system-ui, sans-serif",
-        "titleFontSize": 11
-      }
-    },
-    "color": {
-      "field": "service",
-      "type": "nominal",
-      "scale": {
-        "domain": [
-          "GP",
-          "After-Hours GP"
-        ],
-        "range": [
-          "#2E86AB",
-          "#E67E22"
+      "mark": {"type": "area", "opacity": 0.85, "line": {"strokeWidth": 1.5}},
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {
+            "title": null,
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "labelFontSize": 10,
+            "labelAngle": -30
+          }
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "stack": "zero",
+          "axis": {
+            "title": "% of people who needed GP care",
+            "format": ".0f",
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "titleFont": "Source Sans 3, system-ui, sans-serif",
+            "titleFontSize": 11
+          }
+        },
+        "color": {
+          "field": "barrier_type",
+          "type": "nominal",
+          "sort": ["Cost barrier", "Other barriers"],
+          "scale": {
+            "domain": ["Cost barrier", "Other barriers"],
+            "range": ["#EE7733", "#88CCEE"]
+          },
+          "legend": {
+            "title": "Barrier type",
+            "titleFont": "Source Sans 3, system-ui, sans-serif",
+            "labelFont": "Source Sans 3, system-ui, sans-serif"
+          }
+        },
+        "order": {
+          "field": "barrier_type",
+          "sort": "ascending"
+        },
+        "tooltip": [
+          {"field": "year", "title": "Year"},
+          {"field": "barrier_type", "title": "Barrier type"},
+          {"field": "pct", "title": "% of people who needed GP", "format": ".1f"}
         ]
-      },
-      "legend": {
-        "title": "Service",
-        "titleFont": "Source Sans 3, system-ui, sans-serif",
-        "labelFont": "Source Sans 3, system-ui, sans-serif"
       }
     },
-    "tooltip": [
-      {
-        "field": "year",
-        "title": "Year"
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -4,
+        "dy": -12,
+        "fontSize": 9,
+        "fontStyle": "italic",
+        "color": "#CC5500"
       },
-      {
-        "field": "service",
-        "title": "Service"
-      },
-      {
-        "field": "needed_pct",
-        "title": "% who saw service",
-        "format": ".1f"
+      "data": {"values": [{"year": "2023–24", "y": 8.8}]},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "y", "type": "quantitative"},
+        "text": {"value": "8.8% — cost peak"}
       }
-    ]
-  }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -4,
+        "dy": 14,
+        "fontSize": 9,
+        "fontStyle": "italic",
+        "color": "#888888"
+      },
+      "data": {"values": [{"year": "2020–21", "y": 2.4}]},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "y", "type": "quantitative"},
+        "text": {"value": "COVID low: 2.4%"}
+      }
+    }
+  ]
 }
